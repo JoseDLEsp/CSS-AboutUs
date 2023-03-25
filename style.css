@@ -1,0 +1,103 @@
+:root {
+    --gradiente: linear-gradient(90deg, rgba(12,10,47,1) 0%, rgba(21,177,209,0.7651435574229692) 100%);
+    --oscuro: rgba(12,10,47,1);
+    --claro:rgba(21,177,209,0.7651435574229692);
+  }
+html{
+    scroll-behavior: smooth;
+}
+
+
+
+  /* Barra de navegacion */
+
+.navbar{
+    background: var(--gradiente);
+}
+
+.container-fluid{
+    max-width: 1300px;
+}
+
+.navbar a{
+    color:white;
+}
+.navbar a:hover{
+    color:white;
+    font-weight: bolder;
+}
+.navbar button .navbar-toggler{
+    color: white;
+}
+
+
+
+/* Cuerpo */
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+
+form input{
+    margin-right: 10px;
+}
+
+.screenFiller {
+    max-width: 1300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin:0 auto;
+    height:92vh;
+    min-width: 100vh;
+    /* border: 10px solid orange; */
+}
+.screenFiller h1{
+    font-size: 4vw;
+    margin: 3%;
+}
+
+
+/* .col{
+    flex-direction: column;
+
+    text-align: center;
+    border: solid 10px grey;
+}
+
+.row{   
+    flex-direction: row;
+    border: solid 5px black;
+} */
+
+.col, .row{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+}
+
+
+h1, h2{
+    font-size: 4vw;
+    margin: auto;
+}
+
+h2{
+    background: var(--gradiente);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.palabra-resaltada{
+    color: var(--gradiente);
+}
+
+body a{
+    max-width: 100%;
+}
+
+a:hover{
+    font-weight: bolder;
+    color: var(--oscuro);
+}
