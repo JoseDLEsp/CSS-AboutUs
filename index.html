@@ -11,10 +11,14 @@
       type="image/x-icon"
     />
 
+   
+    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/60d4b70ba2.js" crossorigin="anonymous"></script>
     
-
     <link rel="stylesheet" href="Styles/styles.css" />
+    <link rel="stylesheet" href="Styles/navbar.css" />
     <link rel="stylesheet" href="Styles/carousel.css" />
+    <link rel="stylesheet" href="Styles/card.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -24,19 +28,22 @@
   </head>
 
   <!-- Barra de navegación -->
-  <ul class="navbar">
+  <ul class="navbar" id="navbar">
     <li>
-      <img src="assets/50cc9ad5-e8bd-47e3-9866-27ed8230e325.jfif" />
+      <a class="navbar-img"><img src="assets/Logo-02.png" /></a>
+      
     </li>
-    <li>
-      <a class="logo-name" href="#">
-        <p>Chemical Science</p>
-        <p>for Students</p>
-      </a>
-    </li>
+
+    <li><a class="navbar-item" href="#">Inicio</a></li>
     <li><a class="navbar-item" href="#">Blog</a></li>
     <li><a class="navbar-item" href="#">Nosotros</a></li>
-    <li><a class="navbar-item" href="#">Contactanos</a></li>
+    <li><a class="navbar-item" href="#">Contacto</a></li>
+    
+      <a id="hamburguesa" class="hamburguesa" onclick="desplegarNavBar()">
+        <i class="fa fa-bars"></i>
+      </a>
+
+    
   </ul>
 
   <!-- Inicia Cuerpo -->
@@ -62,7 +69,7 @@
           <ul class="fade-in">
             <li><button><a href="#quienes-somos">Quienes somos</a></button></li>
             <li><button><a href="#nuestros-productos">Nuestros Productos</a></button></li>
-            <li><button><a href="#quienes-somos">Nuestro equipo</a></button></li>
+            <li><button><a href="#conoce-al-equipo">Nuestro equipo</a></button></li>
           </ul>
         </div>
         <div class="col fade-in">
@@ -80,7 +87,7 @@
 
     <section id="quienes-somos" class="fullscreen">
       <div class="title-row">
-        <p class="titulo" ><span class="palabra-resaltada">Quienes somos</p></span>
+        <p class="titulo" ><span class="palabra-resaltada">QUIENES SOMOS?</p></span>
       </div>
       <div class="row">
         <div class="col">
@@ -113,7 +120,7 @@
 
     <section class="fullscreen">
       <div class="title-row">
-        <p class="titulo" id="nuestros-productos"><span class="palabra-resaltada">Nuestros Productos</p></span>
+        <p class="titulo" id="nuestros-productos"><span class="palabra-resaltada">NUESTROS PRODUCTOS</p></span>
       </div>
 
       <div class="row-prod">
@@ -139,11 +146,38 @@
       </div>
     </section>
 
-    <table>
-      <div class="card">
+    <!-- Nuestros integrantes -->
+    <div class="title-row">
+      <p class="titulo" id="conoce-al-equipo"><span class="palabra-resaltada">CONOCE AL EQUIPO</p></span>
+    </div>
+
+    <div class="container">
+      <ul class="cards">
+        <li class="card">
+          <img class="card-img" src="assets/placeholder-image.jpg"/>
+          <div class="card-title">Lider Equipo A</div>
+          <div class="card-content">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+          <i class="fa-brands fa-linkedin"></i>
+
+        </li>
+        <li class="card">
+          <img class="card-img" src="assets/placeholder-image.jpg"/>
+          <div class="card-title">Lider Equipo B</div>
+          <div class="card-content">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+          <i class="fa-brands fa-linkedin"></i>
+          
+
+        </li>
+        <li class="card">
+          <img class="card-img" src="assets/placeholder-image.jpg"/>
+          <div class="card-title">Lider Equipo C</div>
+          <div class="card-content">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+          <i class="fa-brands fa-linkedin"></i>
+
+        </li>
         
-      </div>
-    </table>
+      </ul>
+    </div>
 
   </body>
 </html>

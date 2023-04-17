@@ -18,57 +18,7 @@ body {
   margin: 0;
 }
 
-/* Barra de navegacion */
-.navbar {
-  list-style-type: none;
-  width: 100%;
-  top:0;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background: linear-gradient(
-    to right,
-    var(--colorMuyOscuro),
-    var(--colorClaro)
-  );
-}
 
-.navbar img{
-    height: 30px;
-    text-align: center;
-    margin: auto 10px;
-}
-
-.navbar p{
-    margin:6px 0;
-    text-align: left;
-}
-
-.logo-name{
-    line-height:.6rem ;
-    height: 1.6rem;
-    text-align: left;
-    padding: 0;
-    
-}
-
-.navbar li {
-  display: inline;
-  float: left;
-}
-
-.navbar a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 1.2rem;
-}
-
-li a:hover {
-  background-color: #111;
-}
 
 /* Contenido */
 
@@ -112,7 +62,7 @@ li a:hover {
 }
 
 .mision-vision{
-    font-size: 2rem;
+    font-size: 2vw;
     padding: 3%;
 }
 
@@ -125,7 +75,7 @@ li{
 }
 
 button{
-  font-size: 1.4rem;
+  font-size: 1.4vw;
   font-family: "Tajawal", sans-serif;
   
   color: white;
@@ -149,6 +99,7 @@ button a{
 
 button a:hover{
   background-color: white;
+  
 }
 
 button:hover{
@@ -157,6 +108,7 @@ button:hover{
   border:solid 2px var(--colorOscuro);
   font-weight: bold;
   cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 15%);
 }
 
 .palabra-resaltada {
@@ -199,7 +151,7 @@ button:hover{
 }
 
 .parrafo{
-  font-size: 1.5rem;
+  font-size: 1.6vw;
   text-align: justify;
   padding: 0 8%;
 }
@@ -234,6 +186,15 @@ button:hover{
   font-size: 2rem;
   margin: 0;
 }
+
+
+.table {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  text-align: center;
+}
+
 
 
 .fade-in{
