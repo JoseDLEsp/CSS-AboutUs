@@ -17,8 +17,11 @@
     
     <link rel="stylesheet" href="Styles/styles.css" />
     <link rel="stylesheet" href="Styles/navbar.css" />
-    <link rel="stylesheet" href="Styles/carousel.css" />
-    <link rel="stylesheet" href="Styles/card.css" />
+    <link rel="stylesheet" href="Styles/Components/carousel.css" />
+    <link rel="stylesheet" href="Styles/Components/card.css" />
+    <link rel="stylesheet" href="Styles/Components/button.css" />
+    <link rel="stylesheet" href="Styles/animation.css" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -50,7 +53,7 @@
   <body>
 
   <!-- Mision y vision -->
-    <section class="fullscreen">
+    
       <div class="row">
         <div class="col fade-in">
           <p class="mision-vision">
@@ -64,12 +67,12 @@
           <img class="image walk-in-right" src="assets/horizontal placeholder image.png"/>
         </div>
       </div>
-      <div class="row">
+      <div class="row-inverted">
         <div class="col color-col walk-in-left">
           <ul class="fade-in">
-            <li><button><a href="#quienes-somos">Quienes somos</a></button></li>
-            <li><button><a href="#nuestros-productos">Nuestros Productos</a></button></li>
-            <li><button><a href="#conoce-al-equipo">Nuestro equipo</a></button></li>
+            <li><button class="boton-oscuro" href="#quienes-somos">Quienes somos</button></li>
+            <li><button class="boton-oscuro"  href="#nuestros-productos">Nuestros Productos</button></li>
+            <li><button class="boton-oscuro"  href="#conoce-al-equipo">Nuestro equipo</button></li>
           </ul>
         </div>
         <div class="col fade-in">
@@ -81,16 +84,16 @@
           </p>
         </div>
       </div>
-    </section>
+    
     
 <!-- Quienes somos -->
 
-    <section id="quienes-somos" class="fullscreen">
-      <div class="title-row">
+    
+      <div id="quienes-somos" class="title-row">
         <p class="titulo" ><span class="palabra-resaltada">QUIENES SOMOS?</p></span>
       </div>
       <div class="row">
-        <div class="col">
+        <div class="col-parrafo">
           <p class="parrafo fade-in">
             Chemical Scinece for Stududents es una Startup mexicana creada con
             el objetivo de lorem ipsum dolor sit amet, consectetur adipiscing
@@ -106,15 +109,14 @@
         </div>
       </div>
 
-      <div class="row-filos fade-in">
+
         <div class="filosofia-bg">
           <p class="filosofia fade-in">Nuestra filosofia es lorem ipsum dolor sit amet, consectetur
           adipiscing elit. Pellentesque quam augue, placerat eu lorem a lorem
           ipsum dolor sit amet</p>
         </div>
-       
-      </div>
-    </section>
+  
+  
 
     <!-- Productos -->
 
@@ -123,22 +125,22 @@
         <p class="titulo" id="nuestros-productos"><span class="palabra-resaltada">NUESTROS PRODUCTOS</p></span>
       </div>
 
-      <div class="row-prod">
+      <div class="row-prod1">
         <div class="col-carousel walk-in-left">
           <img class="image" src="assets/horizontal placeholder image.png"/>
         </div>
         <div class="col-descripcion-producto fade-in-long">
           <p class="titulo-producto">Producto 1</p>
           <p class="parrafo">Pellentesque quam augue, placerat eu lorem a lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque quam augue, placerat eu lorem a.</p>
-          <button><a>Ir a producto</a></button>
+          <button class="boton-claro">Ir a producto</button>
         </div>
       </div>
 
-      <div class="row-prod walk-in-right">
-        <div class="col-descripcion-producto f">
+      <div class="row-prod2 walk-in-right">
+        <div class="col-descripcion-producto">
           <p class="titulo-producto">Producto 2</p>
           <p class="parrafo">Pellentesque quam augue, placerat eu lorem a lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque quam augue, placerat eu lorem a.</p>
-          <button><a>Ir a producto</a></button>
+          <button class="boton-claro">Ir a producto</button>
         </div>
         <div class="col-carousel ">
           <img class="image" src="assets/horizontal placeholder image.png"/>

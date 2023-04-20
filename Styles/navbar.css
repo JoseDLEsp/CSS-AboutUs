@@ -1,3 +1,14 @@
+:root {
+  --colorClaro: #959ce8;
+  --colorOscuro: #5757ce;
+  --colorMuyOscuro: #15161c;
+  --gradiente:linear-gradient(
+    to right,
+    var(--colorMuyOscuro),
+    var(--colorClaro)
+  );
+}
+
 /* Barra de navegacion */
 .navbar {
   list-style-type: none;
@@ -6,11 +17,12 @@
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background: linear-gradient(
+  /* background: linear-gradient(
     to right,
     var(--colorMuyOscuro),
     var(--colorClaro)
-  );
+  ); */
+  background:var(--colorMuyOscuro) ;
 }
 
 .navbar img {
@@ -43,11 +55,14 @@ a img {
 }
 
 .navbar li a:hover {
-  background-color: #111;
+  background-color: #5757ce;
 }
 
 .hamburguesa {
   display: none;
+}
+.hamburguesa:hover{
+  cursor: pointer;
 }
 
 @media screen and (max-width: 600px) {

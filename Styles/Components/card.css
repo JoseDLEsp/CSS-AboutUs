@@ -1,6 +1,7 @@
 :root {
-  --red: #959ce8;
-  --darkred: #5757ce;
+  --colorClaro: #959ce8;
+  --colorOscuro: #5757ce;
+  --colorMuyOscuro: #15161c;
   --platinum: #e5e5e5;
   --black: #2b2d42;
   --white: #fff;
@@ -8,7 +9,6 @@
 }
 .container {
   width: 100%;
-  padding: 0 15px;
   margin: 0 auto;
   text-align: center;
 }
@@ -45,7 +45,7 @@
 
 .card:hover {
   color: var(--white);
-  background: var(--red);
+  background: var(--colorClaro);
 }
 
 .card .card-title {
@@ -64,7 +64,7 @@
 
 
 .card:hover .card-link {
-  background: var(--darkred);
+  background: var(--colorOscuro);
 }
 
 .cards::-webkit-scrollbar {
@@ -77,11 +77,11 @@
 }
 
 .cards::-webkit-scrollbar-thumb {
-  background: var(--darkred);
+  background: var(--colorOscuro);
 }
 
 .cards::-webkit-scrollbar-track {
-  background: var(--red);
+  background: var(--colorClaro);
 }
 
 @media (min-width: 500px) {
