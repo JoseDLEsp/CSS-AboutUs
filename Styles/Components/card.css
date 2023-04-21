@@ -50,6 +50,7 @@
 
 .card .card-title {
   font-size: 20px;
+  margin-top: 15px;
 }
 
 .card .card-content {
@@ -58,7 +59,15 @@
 }
 
 .fa-linkedin{
-  font-size: 30px;
+  font-size: 20px;
+}
+
+.card ul{
+  padding: 0;
+}
+
+.card li{
+  display: inline;
 }
 
 

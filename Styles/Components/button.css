@@ -1,0 +1,50 @@
+:root {
+    --colorClaro: #959ce8;
+    --colorOscuro: #5757ce;
+    --colorMuyOscuro: #15161c;
+    --gradiente: linear-gradient(
+      to right,
+      var(--colorMuyOscuro),
+      var(--colorClaro)
+    );
+  }
+
+.boton-oscuro,.boton-claro {
+    font-size: 2vh;
+    font-family: "Tajawal", sans-serif; 
+    border-radius: 10px;
+    padding: 5px;
+    margin: 0.4rem auto;
+    width: 50%;
+    height: 44px;
+    text-align: center;
+  }
+  
+  .boton-oscuro{
+    background-color: black;
+    border: solid black 2px;
+    color: white;
+  }
+  
+  .boton-claro{
+    background-color: white;
+    border: solid var(--colorOscuro) 2px;
+    color: var(--colorOscuro);
+  }
+  
+  
+  .boton-oscuro:hover {
+    background-color: white;
+    color: var(--colorOscuro);
+    border: solid 2px var(--colorOscuro);
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 15%);
+  }
+
+  .boton-claro:hover{
+    background: var(--colorMuyOscuro);
+    color: white;
+    cursor: pointer;
+    border-color: var(--colorMuyOscuro);
+  }

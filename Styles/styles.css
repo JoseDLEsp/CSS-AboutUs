@@ -66,38 +66,7 @@ li {
 
 
 
-button {
-  font-size: 2vh;
-  font-family: "Tajawal", sans-serif; 
-  border-radius: 10px;
-  padding: 5px;
-  margin: 0.4rem auto;
-  width: 50%;
-  height: 44px;
-  text-align: center;
-}
 
-.boton-oscuro{
-  background-color: black;
-  border: solid black 2px;
-  color: white;
-}
-
-.boton-claro{
-  background-color: white;
-  border: solid var(--colorOscuro) 2px;
-  color: var(--colorOscuro);
-}
-
-
-.boton-oscuro:hover {
-  background-color: white;
-  color: var(--colorOscuro);
-  border: solid 2px var(--colorOscuro);
-  font-weight: bold;
-  cursor: pointer;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 15%);
-}
 
 .palabra-resaltada {
   background: var(--gradiente);
@@ -172,6 +141,26 @@ button {
   overflow-y: hidden;
   white-space: nowrap;
   text-align: center;
+}
+
+footer{
+  text-align: center;
+  height: 30vh;
+  font-size: 3vh;
+  color: white;
+  background-color: var(--colorMuyOscuro);
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+
+footer ul{
+  margin: 0;
+}
+
+footer ul li{
+  display: inline;
+  margin: 0 10px;
 }
 
 

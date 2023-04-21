@@ -12,8 +12,7 @@
     />
 
    
-    <script src="script.js"></script>
-    <script src="https://kit.fontawesome.com/60d4b70ba2.js" crossorigin="anonymous"></script>
+    
     
     <link rel="stylesheet" href="Styles/styles.css" />
     <link rel="stylesheet" href="Styles/navbar.css" />
@@ -21,6 +20,8 @@
     <link rel="stylesheet" href="Styles/Components/card.css" />
     <link rel="stylesheet" href="Styles/Components/button.css" />
     <link rel="stylesheet" href="Styles/animation.css" />
+    <link rel="stylesheet" href="Styles/Components/scroll-top.css" />
+
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -41,7 +42,7 @@
     <li><a class="navbar-item" href="#">Blog</a></li>
     <li><a class="navbar-item" href="#">Nosotros</a></li>
     <li><a class="navbar-item" href="#">Contacto</a></li>
-    
+
       <a id="hamburguesa" class="hamburguesa" onclick="desplegarNavBar()">
         <i class="fa fa-bars"></i>
       </a>
@@ -84,7 +85,14 @@
           </p>
         </div>
       </div>
-    
+
+
+<!-- Boton scroll back -->
+
+<button onclick="scrollBack()" id="scroll-top-btn" class="scroll-top" title="Regresar">
+  <i class="fa-solid fa-arrow-up"></i>
+  <p>Regresar</p>
+</button>
     
 <!-- Quienes somos -->
 
@@ -159,14 +167,26 @@
           <img class="card-img" src="assets/placeholder-image.jpg"/>
           <div class="card-title">Lider Equipo A</div>
           <div class="card-content">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
-          <i class="fa-brands fa-linkedin"></i>
+          
+          <ul>
+            <li><a><i class="fa-brands fa-linkedin-in"></i></a></li>
+            <li><a><i class="fa-brands fa-twitter"></i></a></li>
+            <li><a><i class="fa-brands fa-facebook"></i></a></li>
+            <li><a><i class="fa-brands fa-instagram"></i></a></li>
+          </ul>
 
         </li>
         <li class="card">
           <img class="card-img" src="assets/placeholder-image.jpg"/>
           <div class="card-title">Lider Equipo B</div>
           <div class="card-content">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
-          <i class="fa-brands fa-linkedin"></i>
+          
+          <ul>
+            <li><a><i class="fa-brands fa-linkedin-in"></i></a></li>
+            <li><a><i class="fa-brands fa-twitter"></i></a></li>
+            <li><a><i class="fa-brands fa-facebook"></i></a></li>
+            <li><a><i class="fa-brands fa-instagram"></i></a></li>
+          </ul>
           
 
         </li>
@@ -174,12 +194,33 @@
           <img class="card-img" src="assets/placeholder-image.jpg"/>
           <div class="card-title">Lider Equipo C</div>
           <div class="card-content">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
-          <i class="fa-brands fa-linkedin"></i>
+          
+          <ul>
+            <li><a><i class="fa-brands fa-linkedin-in"></i></a></li>
+            <li><a><i class="fa-brands fa-twitter"></i></a></li>
+            <li><a><i class="fa-brands fa-facebook"></i></a></li>
+            <li><a><i class="fa-brands fa-instagram"></i></a></li>
+          </ul>
 
         </li>
         
       </ul>
     </div>
 
+    <!-- Pie de pagina -->
+    <footer>
+      <ul>
+        <li><a><i class="fa-brands fa-linkedin-in"></i></a></li>
+        <li><a><i class="fa-brands fa-twitter"></i></a></li>
+        <li><a><i class="fa-brands fa-facebook"></i></a></li>
+        <li><a><i class="fa-brands fa-instagram"></i></a></li>
+      </ul>
+      <p>Chemical Science for Students</p>
+    </footer>
+
   </body>
 </html>
+
+
+<script src="script.js"></script>
+<script src="https://kit.fontawesome.com/60d4b70ba2.js" crossorigin="anonymous"></script>
