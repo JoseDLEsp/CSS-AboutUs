@@ -1,7 +1,6 @@
+@import '../constants.css';
+
 :root {
-  --colorClaro: #959ce8;
-  --colorOscuro: #5757ce;
-  --colorMuyOscuro: #15161c;
   --platinum: #e5e5e5;
   --black: #2b2d42;
   --white: #fff;
@@ -34,6 +33,8 @@
   padding: 20px;
   background: white;
   border-radius: 12px;
+  color: var(--colorOscuro);
+  /* border: var(--colorClaro) solid 5px; */
   box-shadow: 0 5px 15px rgba(0, 0, 0, 15%);
   scroll-snap-align: start;
   transition: all 0.2s;

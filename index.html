@@ -14,13 +14,18 @@
    
     
     
-    <link rel="stylesheet" href="Styles/styles.css" />
+    <link rel="stylesheet" href="Styles/layout.css" />
     <link rel="stylesheet" href="Styles/navbar.css" />
     <link rel="stylesheet" href="Styles/Components/carousel.css" />
     <link rel="stylesheet" href="Styles/Components/card.css" />
     <link rel="stylesheet" href="Styles/Components/button.css" />
     <link rel="stylesheet" href="Styles/animation.css" />
     <link rel="stylesheet" href="Styles/Components/scroll-top.css" />
+
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+/>
 
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -35,9 +40,7 @@
   <ul class="navbar" id="navbar">
     <li>
       <a class="navbar-img"><img src="assets/Logo-02.png" /></a>
-      
     </li>
-
     <li><a class="navbar-item" href="#">Inicio</a></li>
     <li><a class="navbar-item" href="#">Blog</a></li>
     <li><a class="navbar-item" href="#">Nosotros</a></li>
@@ -71,9 +74,9 @@
       <div class="row-inverted">
         <div class="col color-col walk-in-left">
           <ul class="fade-in">
-            <li><button class="boton-oscuro" href="#quienes-somos">Quienes somos</button></li>
-            <li><button class="boton-oscuro"  href="#nuestros-productos">Nuestros Productos</button></li>
-            <li><button class="boton-oscuro"  href="#conoce-al-equipo">Nuestro equipo</button></li>
+            <li><button class="boton-oscuro" onclick="scrollToElement('quienes-somos')">Quienes somos</button></li>
+            <li><button class="boton-oscuro"  onclick="scrollToElement('nuestros-productos')">Nuestros Productos</button></li>
+            <li><button class="boton-oscuro"  onclick="scrollToElement('conoce-al-equipo')">Nuestro equipo</button></li>
           </ul>
         </div>
         <div class="col fade-in">
@@ -98,7 +101,7 @@
 
     
       <div id="quienes-somos" class="title-row">
-        <p class="titulo" ><span class="palabra-resaltada">QUIENES SOMOS?</p></span>
+        <p class="titulo" ><span class="palabra-resaltada">¿QUIENES SOMOS?</p></span>
       </div>
       <div class="row">
         <div class="col-parrafo">
@@ -128,14 +131,27 @@
 
     <!-- Productos -->
 
-    <section class="fullscreen">
+    
       <div class="title-row">
         <p class="titulo" id="nuestros-productos"><span class="palabra-resaltada">NUESTROS PRODUCTOS</p></span>
       </div>
 
       <div class="row-prod1">
         <div class="col-carousel walk-in-left">
-          <img class="image" src="assets/horizontal placeholder image.png"/>
+          <div class="swiper">
+            <div class="swiper-wrapper">
+              <!-- Slides -->
+              <div class="swiper-slide"><img src="assets/horizontal placeholder image.png"></div>
+              <div class="swiper-slide"><img src="assets/horizontal placeholder image.png"></div>
+              <div class="swiper-slide"><img src="assets/horizontal placeholder image.png"></div>
+              ...
+            </div>
+          
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          
+          </div>
         </div>
         <div class="col-descripcion-producto fade-in-long">
           <p class="titulo-producto">Producto 1</p>
@@ -150,11 +166,28 @@
           <p class="parrafo">Pellentesque quam augue, placerat eu lorem a lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque quam augue, placerat eu lorem a.</p>
           <button class="boton-claro">Ir a producto</button>
         </div>
+
+
+
         <div class="col-carousel ">
-          <img class="image" src="assets/horizontal placeholder image.png"/>
+          <div class="swiper">
+            <div class="swiper-wrapper">
+              <!-- Slides -->
+              <div class="swiper-slide"><img src="assets/horizontal placeholder image.png"></div>
+              <div class="swiper-slide"><img src="assets/horizontal placeholder image.png"></div>
+              <div class="swiper-slide"><img src="assets/horizontal placeholder image.png"></div>
+              ...
+            </div>
+
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          
+          </div>
+      
         </div>
       </div>
-    </section>
+   
 
     <!-- Nuestros integrantes -->
     <div class="title-row">
@@ -207,6 +240,7 @@
       </ul>
     </div>
 
+
     <!-- Pie de pagina -->
     <footer>
       <ul>
@@ -222,5 +256,6 @@
 </html>
 
 
-<script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<script src="app.js"></script>
 <script src="https://kit.fontawesome.com/60d4b70ba2.js" crossorigin="anonymous"></script>
