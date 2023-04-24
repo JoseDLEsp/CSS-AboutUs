@@ -94,6 +94,16 @@
   background: var(--colorClaro);
 }
 
+@media (max-width: 500px) {
+  .card {
+    flex-basis: calc(50% - 10px);
+  }
+
+  .card:not(:last-child) {
+    margin-right: 20px;
+  }
+}
+
 @media (min-width: 500px) {
   .card {
     flex-basis: calc(50% - 10px);
