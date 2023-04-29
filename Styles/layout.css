@@ -73,6 +73,7 @@ li {
   width: 100%;
   height: 10%;
   margin-top: 10%;
+  margin-bottom: 2%;
 }
 
 .titulo {
@@ -103,7 +104,7 @@ li {
 }
 
 .parrafo {
-  font-size: 3vh;
+  font-size: 1.6vw;
   text-align: justify;
   padding: 0 8%;
 }
@@ -164,6 +165,10 @@ footer ul li{
 
 
 @media (max-width: 900px) {
+  .parrafo{
+    font-size: 3vh;
+  }
+
   .row,
   .row-prod2, .row-filos {
     flex-direction: column;
