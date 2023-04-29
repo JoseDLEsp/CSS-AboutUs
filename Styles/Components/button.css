@@ -10,14 +10,15 @@
   }
 
 .boton-oscuro,.boton-claro {
-    font-size: 2vh;
+    font-size: 1.5vw;
     font-family: "Tajawal", sans-serif; 
     border-radius: 10px;
-    padding: 5px;
+    padding: 0px;
     margin: 0.4rem auto;
     width: 50%;
     height: 44px;
     text-align: center;
+    padding: auto auto;
   }
   
   .boton-oscuro{
@@ -47,4 +48,17 @@
     color: white;
     cursor: pointer;
     border-color: var(--colorMuyOscuro);
+  }
+
+
+  @media (max-width:700px) {
+    .boton-claro, .boton-oscuro{
+      font-size: 2vh;
+    }
+  }
+
+  @media (max-width:700px) {
+    .boton-claro, .boton-oscuro{
+      font-size: 2vh;
+    }
   }

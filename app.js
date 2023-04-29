@@ -24,7 +24,7 @@ let topScrollBtn = document.getElementById("scroll-top-btn");
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
-  if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
     topScrollBtn.style.display = "block";
   } else {
     topScrollBtn.style.display = "none";

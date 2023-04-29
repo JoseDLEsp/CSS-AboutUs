@@ -59,9 +59,6 @@
   max-width: 85%;
 }
 
-.fa-linkedin{
-  font-size: 20px;
-}
 
 .card ul{
   padding: 0;
@@ -69,6 +66,9 @@
 
 .card li{
   display: inline;
+  margin: 0 10px;
+  font-size: 20px;
+
 }
 
 
@@ -102,6 +102,13 @@
   .card:not(:last-child) {
     margin-right: 20px;
   }
+  .cards:first-child{
+    margin-left: 20px;
+  }
+
+  .cards:last-child{
+    margin-right: 20px;
+  }
 }
 
 @media (min-width: 500px) {
@@ -111,6 +118,13 @@
 
   .card:not(:last-child) {
     margin-right: 20px;
+  }
+  .cards:first-child{
+    margin-left: 40px;
+  }
+
+  .cards:last-child{
+    margin-right: 40px;
   }
 }
 
@@ -122,6 +136,9 @@
   .card:not(:last-child) {
     margin-right: 30px;
   }
+  
+  
+
 }
 
 @media (min-width: 1100px) {
@@ -135,5 +152,9 @@
 
   .card:not(:last-child) {
     margin-right: 40px;
+  }
+
+  .cards::-webkit-scrollbar {
+    display: none;
   }
 }
