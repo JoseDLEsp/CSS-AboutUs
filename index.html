@@ -37,25 +37,23 @@
     />
   </head>
 
-  <!-- Barra de navegación -->
-  <ul class="navbar" id="navbar">
-    <li>
-      <a class="navbar-img"><img src="assets/Logo-02.png" /></a>
-    </li>
-    <li><a class="navbar-item" href="#">Inicio</a></li>
-    <li><a class="navbar-item" href="#">Blog</a></li>
-    <li><a class="navbar-item" href="#">Nosotros</a></li>
-    <li><a class="navbar-item" href="#">Contacto</a></li>
-
-      <a id="hamburguesa" class="hamburguesa" onclick="desplegarNavBar()">
-        <i class="fa fa-bars"></i>
-      </a>
-
-    
-  </ul>
-
+  
   <!-- Inicia Cuerpo -->
   <body>
+<!-- Barra de navegación -->
+<ul class="navbar" id="navbar">
+  <li>
+    <a class="navbar-img"><img src="assets/Logo-02.png" /></a>
+  </li>
+  <li><a class="navbar-item" href="#">Inicio</a></li>
+  <li><a class="navbar-item" href="#">Blog</a></li>
+  <li><a class="navbar-item" href="#">Nosotros</a></li>
+  <li><a class="navbar-item" href="#">Contacto</a></li>
+
+    <a id="hamburguer" class="hamburguer" onclick="desplegarNavBar()">
+      <i class="fa fa-bars"></i>
+    </a>
+</ul>
 
   <!-- Mision y vision -->
     
@@ -138,22 +136,50 @@
       </div>
 
       <div class="row-prod1">
+
+
+<!--  -->
+
         <div class="col-carousel walk-in-left">
-          <div class="swiper">
-            <div class="swiper-wrapper">
-              <!-- Slides -->
-              <div class="swiper-slide"><img src="assets/horizontal placeholder image.png"></div>
-              <div class="swiper-slide"><img src="assets/horizontal placeholder image.png"></div>
-              <div class="swiper-slide"><img src="assets/horizontal placeholder image.png"></div>
-              ...
+          <div class="carousel1">
+            <div class="carousel1-inner">
+                <input class="carousel1-open" type="radio" id="carousel1-1" name="carousel1" aria-hidden="true" hidden="" checked="checked">
+                <div class="carousel1-item">
+                    <img src="assets/horizontal placeholder image.png">
+                </div>
+                <input class="carousel1-open" type="radio" id="carousel1-2" name="carousel1" aria-hidden="true" hidden="">
+                <div class="carousel1-item">
+                    <img src="assets/horizontal placeholder image.png">
+                </div>
+                <input class="carousel1-open" type="radio" id="carousel1-3" name="carousel1" aria-hidden="true" hidden="">
+                <div class="carousel1-item">
+                    <img src="assets/horizontal placeholder image.png">
+                </div>
+                <label for="carousel1-3" class="carousel1-control prev control-1">‹</label>
+                <label for="carousel1-2" class="carousel1-control next control-1">›</label>
+                <label for="carousel1-1" class="carousel1-control prev control-2">‹</label>
+                <label for="carousel1-3" class="carousel1-control next control-2">›</label>
+                <label for="carousel1-2" class="carousel1-control prev control-3">‹</label>
+                <label for="carousel1-1" class="carousel1-control next control-3">›</label>
+                <ol class="carousel1-indicators">
+                    <li>
+                        <label for="carousel1-1" class="carousel1-bullet">•</label>
+                    </li>
+                    <li>
+                        <label for="carousel1-2" class="carousel1-bullet">•</label>
+                    </li>
+                    <li>
+                        <label for="carousel1-3" class="carousel1-bullet">•</label>
+                    </li>
+                </ol>
             </div>
-          
-            <!-- If we need navigation buttons -->
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-          
           </div>
+          
         </div>
+
+<!--  -->
+
+
         <div class="col-descripcion-producto fade-in-long">
           <p class="titulo-producto">Producto 1</p>
           <p class="parrafo">Pellentesque quam augue, placerat eu lorem a lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque quam augue, placerat eu lorem a.</p>
@@ -171,21 +197,39 @@
 
 
         <div class="col-carousel ">
-          <div class="swiper">
-            <div class="swiper-wrapper">
-              <!-- Slides -->
-              <div class="swiper-slide"><img src="assets/horizontal placeholder image.png"></div>
-              <div class="swiper-slide"><img src="assets/horizontal placeholder image.png"></div>
-              <div class="swiper-slide"><img src="assets/horizontal placeholder image.png"></div>
-              ...
+          <div class="carousel2">
+            <div class="carousel2-inner">
+                <input class="carousel2-open" type="radio" id="carousel2-1" name="carousel2" aria-hidden="true" hidden="" checked="checked">
+                <div class="carousel2-item">
+                    <img src="assets/horizontal placeholder image.png">
+                </div>
+                <input class="carousel2-open" type="radio" id="carousel2-2" name="carousel2" aria-hidden="true" hidden="">
+                <div class="carousel2-item">
+                    <img src="assets/horizontal placeholder image.png">
+                </div>
+                <input class="carousel2-open" type="radio" id="carousel2-3" name="carousel2" aria-hidden="true" hidden="">
+                <div class="carousel2-item">
+                    <img src="assets/horizontal placeholder image.png">
+                </div>
+                <label for="carousel2-3" class="carousel2-control prev control-1">‹</label>
+                <label for="carousel2-2" class="carousel2-control next control-1">›</label>
+                <label for="carousel2-1" class="carousel2-control prev control-2">‹</label>
+                <label for="carousel2-3" class="carousel2-control next control-2">›</label>
+                <label for="carousel2-2" class="carousel2-control prev control-3">‹</label>
+                <label for="carousel2-1" class="carousel2-control next control-3">›</label>
+                <ol class="carousel2-indicators">
+                    <li>
+                        <label for="carousel2-1" class="carousel2-bullet">•</label>
+                    </li>
+                    <li>
+                        <label for="carousel2-2" class="carousel2-bullet">•</label>
+                    </li>
+                    <li>
+                        <label for="carousel2-3" class="carousel2-bullet">•</label>
+                    </li>
+                </ol>
             </div>
-
-            <!-- If we need navigation buttons -->
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-          
           </div>
-      
         </div>
       </div>
    

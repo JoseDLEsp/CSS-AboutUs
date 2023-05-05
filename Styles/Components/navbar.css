@@ -2,6 +2,7 @@
 
 /* Barra de navegacion */
 .navbar {
+  position: sticky;
   list-style-type: none;
   width: 100%;
   top: 0;
@@ -14,6 +15,7 @@
     var(--colorClaro)
   ); */
   background:var(--colorMuyOscuro) ;
+  z-index: 1000;
 }
 
 .navbar img {
@@ -50,48 +52,54 @@ a img {
   background-color: #5757ce;
 }
 
-.hamburguesa {
+.hamburguer {
   display: none;
 }
 
-.hamburguesa i{
+.hamburguer i{
   margin:6px auto;
 }
 
-.hamburguesa:hover{
+.hamburguer:hover{
   cursor: pointer;
 }
 
 @media screen and (max-width: 600px) {
+
+  .navbar{
+    position: sticky;
+  
+  }
+
   .navbar li:not(:first-child) {
     display: none;
   }
 
-  .navbar.responsive{
+  /* .navbar.responsive{
+    
     position: absolute;
-    z-index: 1;
-  }
+  } */
 
-  .hamburguesa {
+  .hamburguer {
     color: white;
     font-size: 40px;
     float: right;
     display: block;
-    position: absolute;
+    position: relative;
     margin-right: 10px;
     right: 0;
     top: 0;
     z-index: 2000;
   }
 
-   .responsive a.hamburguesa{
+   .responsive a.hamburguer{
     position: absolute;
     right: 0;
     top: 0;
    }
 
 .navbar.responsive li {
-    z-index: 1;
+    z-index: 1000;
     position: relative;
     float: none;
     display: block;
