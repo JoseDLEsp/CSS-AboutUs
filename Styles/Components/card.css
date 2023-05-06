@@ -1,5 +1,3 @@
-@import '../constants.css';
-
 :root {
   --platinum: #e5e5e5;
   --black: #2b2d42;
@@ -24,6 +22,7 @@
   list-style: none;
   overflow-x: scroll;
   scroll-snap-type: x mandatory;
+  margin: auto 100px;
 }
 
 .card {

@@ -11,6 +11,10 @@ body {
 
 /* Contenido */
 
+.navbar-margin{
+  margin-top: 5vh;
+}
+
 .row, .row-inverted {
   display: flex;
   flex-direction: row;

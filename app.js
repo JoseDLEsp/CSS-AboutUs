@@ -1,5 +1,7 @@
-function desplegarNavBar() {
-    console.log("Click en hamburguesa")
+// Click en menú de hamburguesa
+// Función que agrega la clase "responsive" a la barra de navegación, desplegando los
+// elementos al hacer click en el botón de hamburguesa
+function desplegarElementosNavbar() {
     var x = document.getElementById("navbar");
     if (x.className === "navbar") {
       x.className += " responsive";
@@ -18,7 +20,9 @@ function desplegarNavBar() {
 
 
 
-// Funcion de scroll al inicio
+// Click en botón "Regresar"
+// Funcion que permite regresar a la posición incial de la página al hacer click sobre el
+// botón "Regresar"
 let topScrollBtn = document.getElementById("scroll-top-btn");
 
 window.onscroll = function() {scrollFunction()};
@@ -36,7 +40,9 @@ function scrollBack() {
 }
 
 
-// Botones de navegacion
+// Click en botones de navegación
+// La función acepta un parámetro Id al cual la vista se moverá al momento de hacer click 
+// en el botón.
 
 function scrollToElement(elemento){
   document.getElementById(elemento).scrollIntoView();

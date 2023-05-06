@@ -1,22 +1,17 @@
-@import './constants.css';
 
 /* Barra de navegacion */
+
 .navbar {
-  position: sticky;
+  position: fixed;
   list-style-type: none;
   width: 100%;
   top: 0;
-  margin: 0;
-  padding: 0;
   overflow: hidden;
-  /* background: linear-gradient(
-    to right,
-    var(--colorMuyOscuro),
-    var(--colorClaro)
-  ); */
   background:var(--colorMuyOscuro) ;
-  z-index: 1000;
+  z-index: 2; 
 }
+
+
 
 .navbar img {
   height: 30px;
@@ -24,31 +19,27 @@
   margin: auto 10px;
 }
 
-.navbar-img {
+a.navbar-img {
   padding: 0;
+  margin-top: 12px;
+  margin-left: 12px;
 }
 
-.navbar p {
-  margin: 6px 0;
-  text-align: left;
-}
 
-.navbar li {
-  display: inline block;
-  float: left;
-  height: 100%;
-}
 
-.navbar-item,
-a img {
+.navbar-item, .navbar-img {
   display: block;
   color: white;
-  padding: 14px 16px;
+  text-align: center;
   text-decoration: none;
+  float: left;
+  padding: 14px 16px;
   font-size: 1.3rem;
 }
 
-.navbar li a:hover {
+
+
+.navbar-item:hover {
   background-color: #5757ce;
 }
 
@@ -67,12 +58,13 @@ a img {
 @media screen and (max-width: 600px) {
 
   .navbar{
-    position: sticky;
+    position: fixed;
   
   }
 
-  .navbar li:not(:first-child) {
+  .navbar-item {
     display: none;
+    position: relative
   }
 
   /* .navbar.responsive{
@@ -98,15 +90,13 @@ a img {
     top: 0;
    }
 
-.navbar.responsive li {
-    z-index: 1000;
-    position: relative;
-    float: none;
-    display: block;
-    text-align: left;
-    height: 60px;
-    font-size: 1.5rem;
+.navbar.responsive a {
+  float: none;
+  display: block;
+  text-align: left;
   }
+
+  
 
 
 }
