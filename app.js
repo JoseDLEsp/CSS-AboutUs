@@ -11,9 +11,9 @@ function desplegarElementosNavbar() {
 
     var y = document.getElementById("hamburguesa");
     if(y.className === "hamburguesa"){
-        y.className += " hide";
+      y.className += " hide";
     }else{
-        y.className = "hamburguesa";
+      y.className = "hamburguesa";
     }
   }
 
@@ -43,7 +43,6 @@ function scrollBack() {
 // Click en botones de navegación
 // La función acepta un parámetro Id al cual la vista se moverá al momento de hacer click 
 // en el botón.
-
 function scrollToElement(elemento){
   document.getElementById(elemento).scrollIntoView();
 }

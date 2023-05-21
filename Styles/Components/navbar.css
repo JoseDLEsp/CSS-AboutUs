@@ -8,10 +8,8 @@
   top: 0;
   overflow: hidden;
   background:var(--colorMuyOscuro) ;
-  z-index: 2; 
+  z-index: 1; 
 }
-
-
 
 .navbar img {
   height: 30px;
@@ -25,8 +23,6 @@ a.navbar-img {
   margin-left: 12px;
 }
 
-
-
 .navbar-item, .navbar-img {
   display: block;
   color: white;
@@ -36,8 +32,6 @@ a.navbar-img {
   padding: 14px 16px;
   font-size: 1.3rem;
 }
-
-
 
 .navbar-item:hover {
   background-color: #5757ce;

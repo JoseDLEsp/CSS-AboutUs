@@ -12,8 +12,7 @@
   cursor: pointer;
   padding: 15px;
   border-radius: 10px;
-  border: solid transparent 5px;;
-  
+  border: solid transparent 2px;
 }
 
 .scroll-top:hover{
@@ -21,13 +20,13 @@
 }
 
 .scroll-top p{
-    margin: 0;
-    font-size: 18px;
+  margin: 0;
+  font-size: 18px;
 }
 
 .scroll-top i{
-    font-size: 30px;
-    margin-bottom: 5px;
+  font-size: 30px;
+  margin-bottom: 5px;
 }
 
 @media (max-width:900px) {

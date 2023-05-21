@@ -63,10 +63,6 @@ li {
   padding: 3%;
 }
 
-
-
-
-
 .palabra-resaltada {
   background: var(--gradiente);
   -webkit-background-clip: text;
@@ -115,8 +111,6 @@ li {
   text-align: justify;
   padding: 0 8%;
 }
-
-
 
 .filosofia-bg {
   margin:40px 0;
@@ -167,8 +161,6 @@ footer ul li{
   display: inline;
   margin: 0 10px;
 }
-
-
 
 
 @media (max-width: 900px) {
@@ -226,6 +218,5 @@ footer ul li{
   .filosofia{
     font-size: 3.5vw;
   }
-
 
 }
