@@ -2,8 +2,8 @@
 /* Constants */
 /* ********** */
 :root {
-  --colorClaro: #959ce8;
-  --colorOscuro: #5757ce;
+  --colorClaro: #7888ff;
+  --colorOscuro: #09436b;
   --colorMuyOscuro: #15161c;
   --platinum: #e5e5e5;
   --black: #2b2d42;
@@ -52,7 +52,7 @@ li {
 
 .color-col {
   /* background: var(--gradiente); */
-  background-color: var(--colorOscuro);
+  background-color: var(--colorMuyOscuro);
 }
 
 .img-col {
@@ -90,8 +90,8 @@ li {
 }
 
 .boton-oscuro{
-  background-color: black;
-  border: solid black 2px;
+  background-color: var(--colorOscuro);
+  border: solid black 1px;
   color: white;
 }
 
@@ -148,7 +148,7 @@ li {
 }
 
 .palabra-resaltada {
-  background: var(--gradiente);
+  background: var(--colorOscuro);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

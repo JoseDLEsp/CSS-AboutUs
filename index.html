@@ -13,13 +13,6 @@
 
 
     <link rel="stylesheet" href="Styles/layout.css" />
-    <link rel="stylesheet" href="Styles/Components/navbar.css" />
-    <link rel="stylesheet" href="Styles/Components/carousel.css" />
-    <link rel="stylesheet" href="Styles/Components/card.css" />
-    <link rel="stylesheet" href="Styles/Components/button.css" />
-    <link rel="stylesheet" href="Styles/animation.css" />
-    <link rel="stylesheet" href="Styles/Components/scroll-top.css" />
-    <link rel="stylesheet" href="Styles/Components/gallery.css" />
 
     <link
   rel="stylesheet"
@@ -38,8 +31,10 @@
   
   <!-- Inicia Cuerpo -->
   <body>
-<!-- Barra de navegación -->
-<nav class="navbar" id="navbar">
+
+<header>
+  <!-- Barra de navegación -->
+  <nav class="navbar" id="navbar">
     <a class="navbar-img"><img src="assets/Logo-02.png" /></a>
     <a class="navbar-item" href="#">Inicio</a>
     <a class="navbar-item" href="#">Blog</a>
@@ -48,15 +43,15 @@
     <a id="hamburguer" class="hamburguer" onclick="desplegarElementosNavbar()">
       <i class="fa fa-bars"></i>
     </a>
-</nav>
-
+  </nav>
+</header>
 
   <!-- Mision y vision -->
   <main>
     <div class="row navbar-margin">
       <div class="col fade-in">
         <p class="mision-vision">
-          Nuestra <span class="palabra-resaltada">mision</span> es lorem ipsum
+           <span class="palabra-resaltada">Nuestra mision</span> es lorem ipsum
           dolor sit amet, consectetur adipiscing elit. Pellentesque quam
           augue, placerat eu lorem a orem ipsum
           dolor sit amet, consectetur adipiscing elit
@@ -69,14 +64,14 @@
     <div class="row-inverted">
       <div class="col color-col walk-in-left">
         <ul class="fade-in">
-          <li><button class="boton-oscuro" onclick="scrollToElement('quienes-somos')">Quienes somos</button></li>
-          <li><button class="boton-oscuro"  onclick="scrollToElement('nuestros-productos')">Nuestros Productos</button></li>
-          <li><button class="boton-oscuro"  onclick="scrollToElement('conoce-al-equipo')">Nuestro equipo</button></li>
+          <li><button class="boton-oscuro" onclick="scrollToElement('quienes-somos')"> <b> Quienes somos</b></button></li>
+          <li><button class="boton-oscuro"  onclick="scrollToElement('nuestros-productos')"> <b>Nuestros Productos </b></button></li>
+          <li><button class="boton-oscuro"  onclick="scrollToElement('conoce-al-equipo')"> <b>Nuestro equipo</b></button></li>
         </ul>
       </div>
       <div class="col fade-in">
         <p class="mision-vision">
-          Nuestra <span class="palabra-resaltada">vision</span> es lorem ipsum
+           <span class="palabra-resaltada">Nuestra visión</span> es lorem ipsum
           dolor sit amet, consectetur adipiscing elit. Pellentesque quam
           augue, placerat eu lorem a orem ipsum
           dolor sit amet, consectetur adipiscing elit
