@@ -1,24 +1,42 @@
-// Click en menú de hamburguesa
-// Función que agrega la clase "responsive" a la barra de navegación, desplegando los
-// elementos al hacer click en el botón de hamburguesa
-function desplegarElementosNavbar() {
-    var x = document.getElementById("navbar");
-    if (x.className === "navbar") {
-      x.className += " responsive";
-    } else {
-      x.className = "navbar";
+const { createApp } = Vue
+  createApp({
+    data() {
+      return {
+        isMobile:/Mobile/.test(navigator.userAgent),
+        currentSection:'',
+    }},
+    mounted(){
+       
+    },
+    methods:{
+        /**
+         * Display the clicked menu in mobile view
+         * @param {String} type - Type of menu
+         */
+        showMenu(type){
+            // Check the type menu and add or remove class to show menu
+            (type=="burger" && this.curretSection=="graph") ? (navigationMenu.classList.toggle("show-menu"),settingsButton.classList.toggle("hide-button")) :
+             type=="burger"                            ?  navigationMenu.classList.toggle("show-menu") 
+                                                       :  settingsMenu.classList.toggle("show-menu");
+
+            // Explicit code for burger menu                                           
+            // if (type=="burger" && this.currentSection=="graph") {
+            //     navigationMenu.classList.toggle("show-menu")
+            //     settingsButton.classList.toggle("hide-button")
+            // }else if( type=="burger"){
+            //     navigationMenu.classList.toggle("show-menu")
+            // }else{
+            //     settingsMenu.classList.toggle("show-menu");
+            // }
+
+            // Remove scroll in body in desktop, more estetic
+            if (!this.isMobile) {
+                body.classList.toggle("non-scroll")
+            }
+        }
+
     }
-
-    var y = document.getElementById("hamburguesa");
-    if(y.className === "hamburguesa"){
-      y.className += " hide";
-    }else{
-      y.className = "hamburguesa";
-    }
-  }
-
-
-
+  }).mount('#app')
 
 // Click en botón "Regresar"
 // Funcion que permite regresar a la posición incial de la página al hacer click sobre el
@@ -43,8 +61,12 @@ function scrollBack() {
 // Click en botones de navegación
 // La función acepta un parámetro Id al cual la vista se moverá al momento de hacer click 
 // en el botón.
-function scrollToElement(elemento){
-  document.getElementById(elemento).scrollIntoView();
+function scrollToElement(element, margin = window.innerHeight * 0.11){
+  elemento = document.getElementById(element);
+  elementoPosition = elemento.getBoundingClientRect().top; 
+  offsetPosition = elementoPosition + window.screenY - margin;
+  window.scrollTo({
+    top: offsetPosition });
 }
 
 
