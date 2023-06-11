@@ -5,14 +5,12 @@
   --blue:#14406c;
   --dark-blue:#0a1727;
   --colorClaro: #0000fb;
-  --blue: #09436b;
-  --colorMuyOscuro: #15161c;
   --dark-cream:#e2cd66;
+  --light-cream:#edd9b7;
   --platinum: #e5e5e5;
   --black: #2b2d42;
-  --white: #fff;
   --thumb: #edf2f4;
-  --gradiente:linear-gradient(  to right, var(--colorMuyOscuro), var(--colorClaro));
+  --gradiente:linear-gradient(  to right, var(--dark-blue), var(--colorClaro));
 
   /* * *  */
   /* SIZE */
@@ -167,7 +165,7 @@ li {
 }
 
 .color-col {
-  background-color: var(--colorMuyOscuro);
+  background-color: var(--dark-blue);
 }
 
 .img-col {
@@ -232,10 +230,10 @@ li {
 }
 
 .boton-claro:hover{
-  background: var(--colorMuyOscuro);
+  background: var(--dark-blue);
   color: white;
   cursor: pointer;
-  border-color: var(--colorMuyOscuro);
+  border-color: var(--dark-blue);
 }
 
 .scroll-top{
@@ -247,10 +245,12 @@ li {
   border: none;
   outline: none;
   background-color: transparent;
-  color: var(--blue);
+  background: var(--blue);
   cursor: pointer;
-  padding: 15px;
-  border-radius: 10px;
+  padding-top: 8px;
+  padding-left: 12px;
+  padding-right: 12px;
+  border-radius: 50%;
   border: solid transparent 2px;
 }
 
@@ -287,14 +287,6 @@ li {
   font-weight: bold;
 }
 
-.carousel {
-  height: fit-content;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
 .parrafo {
   font-size: 1.6vw;
   text-align: justify;
@@ -323,118 +315,72 @@ li {
 /* * * * *  */
 /* Carousel */
 /* * * * *  */
-.carousel-mobile {
+.carousel-container {
   position: relative;
-  margin-top: 26px;
-}
-
-.carousel-mobile-inner {
-  position: relative;
-  overflow: hidden;
   width: 100%;
+  overflow: hidden;
+  align-items: center;
 }
 
-.carousel-mobile-open:checked + .carousel-mobile-item {
-  position: static;
-  opacity: 100;
+.carousel {
+  position: relative;
+  width: 90%;
+  left: 5%;
+  display: flex;
+  transition: transform 0.5s;
 }
 
-.carousel-mobile-item {
+.carousel-item {
+  flex: 0 0 26%; /* Display 3 items per slide */
+  margin: 2%;
+  text-align: center;
+}
+
+.carousel-controls {
   position: absolute;
-  opacity: 0;
-  -webkit-transition: opacity 0.6s ease-out;
-  transition: opacity 0.6s ease-out;
+  left: 1%;
+  right: 2%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 90;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.carousel-mobile-item img {
-  display: block;
-  height: auto;
-  width: 60%;
-  margin-left: 20%;
-  margin-right: 20%;
-}
-
-.carousel-mobile-control {
-  border-radius: 50%;
+.prev, .next{
+  width: 5%;
+  font-size: 53px;
+  background: transparent;
   color: var(--blue);
   cursor: pointer;
-  display: none;
-  font-size: 40px;
-  height: 40px;
-  line-height: 35px;
-  position: absolute;
-  top: 50%;
-  -webkit-transform: translate(0, -50%);
-  cursor: pointer;
-  -ms-transform: translate(0, -50%);
-  transform: translate(0, -50%);
-  text-align: center;
-  width: 40px;
-  z-index: 10;
+  border-radius: 50%;
+  border: solid transparent 2px;
 }
 
-.carousel-mobile-control.prev {
-  left: 2%;
-}
-
-.carousel-mobile-control.next {
-  right: 2%;
-}
-
-.carousel-mobile-control:hover {
-  color: #aaaaaa;
-}
-
-#carousel-mobile-1:checked ~ .control-1,
-#carousel-mobile-2:checked ~ .control-2,
-#carousel-mobile-3:checked ~ .control-3 {
-  display: block;
-}
 
 /* * * * */
 /* Cards */
 /* * * * */
-.card-container {
-  display: none;
-  width: 100%;
-  margin: 0 auto;
-  text-align: center;
-}
-
 .card-img{
   object-fit: cover;
-  width: 100%;
+  width: 86%;
+  margin: 7%;
   border-radius: 50%;
-}
-
-.cards {
-  display: flex;
-  padding: 25px 4%;
-  list-style: none;
-  justify-content: center;
-  margin: auto 100px;
 }
 
 .card {
   display: flex;
-  flex-basis: calc(25% - 30px);
   flex-direction: column;
-  flex: 0 0 100%;
   padding: 20px;
   background: white;
   border-radius: 12px;
   color: var(--blue);
-  /* border: var(--colorClaro) solid 5px; */
-  /* scroll-snap-align: start;*/
-  transition: all 0.2s;
-}
-
-.card:not(:last-child) {
-  margin-right: 40px;
+  transition: all 0.3s;
 }
 
 .card:hover {
-  color: var(--white);
+  color: white;
   background: var(--colorClaro);
 }
 
@@ -456,12 +402,6 @@ li {
   display: inline;
   margin: 0 10px;
   font-size: 20px;
-}
-
-.control-cards{
-  color: var(--blue);
-  font-size: 40px;
-  transform: translateY(45%);
 }
 
 .card:hover .card-link {
@@ -525,7 +465,34 @@ li {
   font-size: var(--min-title-size)
 }
 
-/* Scren with a width equal or bigger than 320px  */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes walkInLeft {
+  0% {
+    margin-right: 100%;
+  }
+  100% {
+    margin-right: 0;
+  }
+}
+
+@keyframes walkInRight {
+  0% {
+    margin-left: 100%;
+  }
+  100% {
+    margin-left: 0;
+  }
+}
+
+/* Screen with a width equal or bigger than 320px  */
 @media screen and (min-width: 320px) {
   .fluid-font-title{
     font-size: calc(var(--min-title-size) + 20 * ((100vw - 320px) / 1600)) ;
@@ -551,7 +518,6 @@ li {
 /*** Only works for mobiles in landscape with resulution of height : 412 px with width: > 412 px ***/
 
 @media (max-height:412px) and (orientation:landscape){
-  
   .settings-sub-sub-container{
     flex-wrap:nowrap;
   }
@@ -602,42 +568,6 @@ li {
   .menu-settings-button{
     display: none;
   }
-
-  .carousel-mobile{
-    display: none;
-  }
-
-  .card-container{
-    display: block;
-  }
-
-}
-
-@keyframes fadeIn {
-0% {
-  opacity: 0;
-}
-100% {
-  opacity: 1;
-}
-}
-
-@keyframes walkInLeft {
-0% {
-  margin-right: 100%;
-}
-100% {
-  margin-right: 0;
-}
-}
-
-@keyframes walkInRight {
-0% {
-  margin-left: 100%;
-}
-100% {
-  margin-left: 0;
-}
 }
 
 @media (max-width: 900px) {
@@ -674,14 +604,9 @@ li {
   }
 
   .col,
-  .img-col,
-  .col-carousel {
+  .img-col {
     width: 100%;
     height: 40vh;
-  }
-
-  .col-carousel{
-    height: fit-content;
   }
 
   .col-parrafo, .col-descripcion-producto{
@@ -706,12 +631,20 @@ li {
   }
 }
 
-@media (min-width: 700px) {
-  .card {
-    flex-basis: calc(calc(100% / 3) - 20px);
+@media (min-width: 520px) and (max-width: 900px) {
+  .carousel-item{
+    flex: 0 0 39%; /* Display 2 items per slide */
+    margin: 3%;
+  }
+}
+
+@media (min-width: 320px) and (max-width:519px){
+  .carousel{
+    width:80%;
   }
 
-  .card:not(:last-child) {
-    margin-right: 30px;
+  .carousel-item {
+    flex: 0 0 90%; /* Display 1 items per slide on smaller screens */
+    margin: 6%;
   }
 }

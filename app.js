@@ -69,4 +69,35 @@ function scrollToElement(element, margin = window.innerHeight * 0.11){
     top: offsetPosition });
 }
 
+document.addEventListener('DOMContentLoaded', function() {
+  const carousel = document.querySelector('.carousel');
+  const carouselItems = document.querySelectorAll('.carousel-item');
+  const itemWidth = carouselItems[0].offsetWidth;
+  const prevBtn = document.querySelector('.prev');
+  const nextBtn = document.querySelector('.next');
 
+  let currentPosition = 0;
+
+  function moveCarousel() {
+    carousel.style.transform = `translateX(${-currentPosition}px)`;
+  }
+
+  function nextSlide() {
+    currentPosition += itemWidth * 1.14;
+    if (currentPosition > (carouselItems.length - 1) * itemWidth) {
+      currentPosition = 0;
+    }
+    moveCarousel();
+  }
+
+  function prevSlide() {
+    currentPosition -= itemWidth * 1.14;
+    if (currentPosition < 0) {
+      currentPosition = (carouselItems.length - 1) * itemWidth;
+    }
+    moveCarousel();
+  }
+
+  nextBtn.addEventListener('click', nextSlide);
+  prevBtn.addEventListener('click', prevSlide);
+});

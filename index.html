@@ -71,7 +71,7 @@
   
     <!-- Boton scroll back -->
     <button onclick="scrollBack()" id="scroll-top-btn" class="scroll-top" title="Regresar">
-      <i class="fa-solid fa-square-caret-up"></i>
+      <i class="fa-solid fa-caret-up"></i>
     </button>
       
     <!-- Quienes somos -->
@@ -101,118 +101,88 @@
         ipsum dolor sit amet</p>
       </section>
   
-      <!-- Nuestros integrantes -->
+      <!--Carrusel  Nuestros integrantes -->
       <section>
         <h2 class="titulo title-row fluid-font-title" id="conoce-al-equipo">Conoce al equipo</h2>
-        <section class="carousel ">
-
-          <!-- Individual team member carousel (only for mobile) -->
-          <section class="carousel-mobile">
-            <section class="carousel-mobile-inner">
-              <input class="carousel-mobile-open" type="radio" id="carousel-mobile-1" name="carousel-mobile" aria-hidden="true" hidden="" checked="checked">
-              <div class="carousel-mobile-item">
-                <li class="card">
-                  <img class="card-img" src="assets/placeholder-image.jpg"/>
-                  <div class="card-title">Lider Equipo A</div>
-                  <div class="card-content">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
-                  <ul>
-                    <li><a><i class="fa-brands fa-linkedin-in"></i></a></li>
-                    <li><a><i class="fa-brands fa-twitter"></i></a></li>
-                    <li><a><i class="fa-brands fa-facebook"></i></a></li>
-                    <li><a><i class="fa-brands fa-instagram"></i></a></li>
-                  </ul>
-                </li>
-              </div>
-              <input class="carousel-mobile-open" type="radio" id="carousel-mobile-2" name="carousel-mobile" aria-hidden="true" hidden="">
-              <div class="carousel-mobile-item">
-                <li class="card">
-                  <img class="card-img" src="assets/placeholder-image.jpg"/>
-                  <div class="card-title">Lider Equipo B</div>
-                  <div class="card-content">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
-                  <ul>
-                    <li><a><i class="fa-brands fa-linkedin-in"></i></a></li>
-                    <li><a><i class="fa-brands fa-twitter"></i></a></li>
-                    <li><a><i class="fa-brands fa-facebook"></i></a></li>
-                    <li><a><i class="fa-brands fa-instagram"></i></a></li>
-                  </ul>
-                </li>
-              </div>
-              <input class="carousel-mobile-open" type="radio" id="carousel-mobile-3" name="carousel-mobile" aria-hidden="true" hidden="">
-              <div class="carousel-mobile-item">
-                <li class="card">
-                  <img class="card-img" src="assets/placeholder-image.jpg"/>
-                  <div class="card-title">Lider Equipo C</div>
-                  <div class="card-content">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
-                  <ul>
-                    <li><a><i class="fa-brands fa-linkedin-in"></i></a></li>
-                    <li><a><i class="fa-brands fa-twitter"></i></a></li>
-                    <li><a><i class="fa-brands fa-facebook"></i></a></li>
-                    <li><a><i class="fa-brands fa-instagram"></i></a></li>
-                  </ul>
-                </li>
-              </div>
-                <label for="carousel-mobile-3" class="carousel-mobile-control prev control-1"> <i class="fa-solid fa-caret-left"></i> </label>
-                <label for="carousel-mobile-2" class="carousel-mobile-control next control-1"> <i class="fa-solid fa-caret-right"></i> </label>
-                <label for="carousel-mobile-1" class="carousel-mobile-control prev control-2"> <i class="fa-solid fa-caret-left"></i> </label>
-                <label for="carousel-mobile-3" class="carousel-mobile-control next control-2"> <i class="fa-solid fa-caret-right"></i> </label>
-                <label for="carousel-mobile-2" class="carousel-mobile-control prev control-3"> <i class="fa-solid fa-caret-left"></i> </label>
-                <label for="carousel-mobile-1" class="carousel-mobile-control next control-3"> <i class="fa-solid fa-caret-right"></i> </label>
-            </section>
-          </section>           <!-- Individual team member carousel (only for mobile) -->
-          
-          <!-- Team members carousel (only for desktop) -->
-          <div class="card-container">
-            <ul class="cards">
-              <li class="control-cards" >
-                <i class="fa-solid fa-caret-left "></i>
-              </li>
-              <li class="card">
-                <img class="card-img" src="assets/placeholder-image.jpg"/>
-                <div class="card-title">Lider Equipo A</div>
-                <div class="card-content">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
-                <ul>
-                  <li><a><i class="fa-brands fa-linkedin-in"></i></a></li>
-                  <li><a><i class="fa-brands fa-twitter"></i></a></li>
-                  <li><a><i class="fa-brands fa-facebook"></i></a></li>
-                  <li><a><i class="fa-brands fa-instagram"></i></a></li>
-                </ul>
-              </li>
-              <li class="card">
-                <img class="card-img" src="assets/placeholder-image.jpg"/>
-                <div class="card-title">Lider Equipo B</div>
-                <div class="card-content">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
-                <ul>
-                  <li><a><i class="fa-brands fa-linkedin-in"></i></a></li>
-                  <li><a><i class="fa-brands fa-twitter"></i></a></li>
-                  <li><a><i class="fa-brands fa-facebook"></i></a></li>
-                  <li><a><i class="fa-brands fa-instagram"></i></a></li>
-                </ul>
-              </li>
-              <li class="card">
-                <img class="card-img" src="assets/placeholder-image.jpg"/>
-                <div class="card-title">Lider Equipo C</div>
-                <div class="card-content">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
-                
-                <ul>
-                  <li><a><i class="fa-brands fa-linkedin-in"></i></a></li>
-                  <li><a><i class="fa-brands fa-twitter"></i></a></li>
-                  <li><a><i class="fa-brands fa-facebook"></i></a></li>
-                  <li><a><i class="fa-brands fa-instagram"></i></a></li>
-                </ul>
-              </li>  
-              <li class="control-cards">
-                <i class="fa-solid fa-caret-right "></i>
-              </li>
-            </ul>
-            <label  class="carousel-mobile-control prev control-1"> <i class="fa-solid fa-caret-left"></i> </label>
-            <label  class="carousel-mobile-control next control-1"> <i class="fa-solid fa-caret-right"></i> </label>
-            <label  class="carousel-mobile-control prev control-2"> <i class="fa-solid fa-caret-left"></i> </label>
-            <label  class="carousel-mobile-control next control-2"> <i class="fa-solid fa-caret-right"></i> </label>
-            <label  class="carousel-mobile-control prev control-3"> <i class="fa-solid fa-caret-left"></i> </label>
-            <label  class="carousel-mobile-control next control-3"> <i class="fa-solid fa-caret-right"></i> </label>
+        <div class="carousel-container">
+          <section class="carousel">
+            <article class="carousel-item card">
+              <img class="card-img" src="assets/placeholder-image.jpg"/>
+              <div class="card-title">Lider Equipo A</div>
+              <div class="card-content">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+              <ul>
+                <li><a><i class="fa-brands fa-linkedin-in"></i></a></li>
+                <li><a><i class="fa-brands fa-twitter"></i></a></li>
+                <li><a><i class="fa-brands fa-facebook"></i></a></li>
+                <li><a><i class="fa-brands fa-instagram"></i></a></li>
+              </ul>
+            </article>
+            <article class="carousel-item card">
+              <img class="card-img" src="assets/placeholder-image.jpg"/>
+              <div class="card-title">Lider Equipo B</div>
+              <div class="card-content">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+              <ul>
+                <li><a><i class="fa-brands fa-linkedin-in"></i></a></li>
+                <li><a><i class="fa-brands fa-twitter"></i></a></li>
+                <li><a><i class="fa-brands fa-facebook"></i></a></li>
+                <li><a><i class="fa-brands fa-instagram"></i></a></li>
+              </ul>
+            </article>
+            <article class="carousel-item card">
+              <img class="card-img" src="assets/placeholder-image.jpg"/>
+              <div class="card-title">Lider Equipo C</div>
+              <div class="card-content">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+              <ul>
+                <li><a><i class="fa-brands fa-linkedin-in"></i></a></li>
+                <li><a><i class="fa-brands fa-twitter"></i></a></li>
+                <li><a><i class="fa-brands fa-facebook"></i></a></li>
+                <li><a><i class="fa-brands fa-instagram"></i></a></li>
+              </ul>
+            </article>
+            <article class="carousel-item card">
+              <img class="card-img" src="assets/placeholder-image.jpg"/>
+              <div class="card-title">Lider Equipo D</div>
+              <div class="card-content">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+              <ul>
+                <li><a><i class="fa-brands fa-linkedin-in"></i></a></li>
+                <li><a><i class="fa-brands fa-twitter"></i></a></li>
+                <li><a><i class="fa-brands fa-facebook"></i></a></li>
+                <li><a><i class="fa-brands fa-instagram"></i></a></li>
+              </ul>
+            </article>
+            <article class="carousel-item card">
+              <img class="card-img" src="assets/placeholder-image.jpg"/>
+              <div class="card-title">Lider Equipo E</div>
+              <div class="card-content">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+              <ul>
+                <li><a><i class="fa-brands fa-linkedin-in"></i></a></li>
+                <li><a><i class="fa-brands fa-twitter"></i></a></li>
+                <li><a><i class="fa-brands fa-facebook"></i></a></li>
+                <li><a><i class="fa-brands fa-instagram"></i></a></li>
+              </ul>
+            </article>
+            <article class="carousel-item card">
+              <img class="card-img" src="assets/placeholder-image.jpg"/>
+              <div class="card-title">Lider Equipo F</div>
+              <div class="card-content">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+              <ul>
+                <li><a><i class="fa-brands fa-linkedin-in"></i></a></li>
+                <li><a><i class="fa-brands fa-twitter"></i></a></li>
+                <li><a><i class="fa-brands fa-facebook"></i></a></li>
+                <li><a><i class="fa-brands fa-instagram"></i></a></li>
+              </ul>
+            </article>
+          </section>
+          <div class="carousel-controls">
+            <button class="prev">      
+              <i class="fa-solid fa-caret-left"></i>
+            </button>
+            <button class="next"> 
+              <i class="fa-solid fa-caret-right" ></i>
+            </button>
           </div>
+        </div>
           
-        </section>
       </section>
   
       </main>
@@ -221,7 +191,7 @@
       <footer class="footer-container">
         <p>Copyright ©2023 CSS</p>
         <section class="flex-container">
-            <a class="social-media flex-container"><i class="fa-brands fa-facebook-f"></i></a>
+            <a class="social-media flex-container"><i class=" fa-brands fa-facebook-f"></i></a>
             <a class="social-media flex-container"><i class="fa-brands fa-instagram"></i></a>
             <a class="social-media flex-container"><i class="fa-brands fa-youtube"></i></a>
             <a class="social-media flex-container"><i class="fa-brands fa-tiktok"></i></a>
@@ -235,8 +205,8 @@
 </html>
 
 
-<!-- Scripts  -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<!-- Scripts  
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>-->
 <script src="app.js" defer></script>
 <script src="fontAsome.min.js" type="text/javascript" defer></script>
 <script src="https://kit.fontawesome.com/60d4b70ba2.js" crossorigin="anonymous"></script>
