@@ -54,9 +54,9 @@
         <section class="row">
           <section class="col color-col walk-in-left">
             <ul class="fade-in">
-              <li><button class="button-dark" onclick="scrollToElement('quienes-somos')"> <b> Quiénes somos</b></button></li>
-              <li><button class="button-dark"  onclick=""> <b>Nuestros Productos </b></button></li>
-              <li><button class="button-dark"  onclick="scrollToElement('conoce-al-equipo')"> <b>Nuestro equipo</b></button></li>
+              <li><button class="button-dark"  @click="scrollToElement('quienes-somos')"> <b> Quiénes somos</b></button></li>
+              <li><button class="button-dark"  @click=""> <b>Nuestros Productos </b></button></li>
+              <li><button class="button-dark"  @click="scrollToElement('conoce-al-equipo')"> <b>Nuestro equipo</b></button></li>
             </ul>
           </section>
           <section class="col fade-in">
@@ -69,23 +69,23 @@
           </section>
         </section>
   
-    <!-- button scroll back -->
-    <button onclick="scrollBack()" id="scroll-top-btn" class="scroll-top" title="Regresar">
-      <i class="fa-solid fa-caret-up"></i>
-    </button>
+      <!-- button scroll back -->
+      <button id="scrollTopBtn" class="scroll-top" title="Regresar" @click="scrollBack">
+        <i class="fa-solid fa-caret-up"></i>
+      </button>
       
-    <!-- Quienes somos -->
+      <!-- Quienes somos -->
       <section id="quienes-somos">
         <h1  class="title-row titulo fluid-font-title" >¿Quiénes somos?</h1>
         <section class="row-inverted">
           <section class="col-paragraph">
-            <p class="paragraph fade-in">
+            <p class="fluid-font-paragraph fade-in paragraph">
               <span class="palabra-resaltada">Fennex</span>  es una aplicación mexicana creada con
               el objetivo de lorem ipsum dolor sit amet, consectetur adipiscing
               elit. Pellentesque quam augue, placerat eu lorem a lorem ipsum dolor
               sit amet, consectetur adipiscing elit. 
             </p>
-            <p class="paragraph fade-in"> Pellentesque quam augue,
+            <p class="fluid-font-paragraph fade-in paragraph"> Pellentesque quam augue,
               placerat eu lorem a.Pellentesque quam augue, placerat eu lorem a lorem ipsum dolor
               sit amet, consectetur adipiscing elit. Pellentesque quam augue,
               placerat eu lorem a.</p>
@@ -97,7 +97,7 @@
       </section>
         
       <section class="philosophy-bg">
-        <p class="philosophy fade-in paragraph">Nuestra filosofia es lorem ipsum dolor sit amet, consectetur
+        <p class="philosophy fade-in fluid-font-paragraph paragraph">Nuestra filosofia es lorem ipsum dolor sit amet, consectetur
         adipiscing elit. Pellentesque quam augue, placerat eu lorem a lorem
         ipsum dolor sit amet</p>
       </section>
@@ -123,66 +123,86 @@
               </section>
             </article>
             <article class="carousel-item card">
-              <img class="card-img" src="assets/placeholder-image.jpg"/>
-              <div class="card-title">Lider Equipo B</div>
-              <div class="card-content">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
-              <ul>
-                <li><a><i class="fa-brands fa-linkedin-in"></i></a></li>
-                <li><a><i class="fa-brands fa-twitter"></i></a></li>
-                <li><a><i class="fa-brands fa-facebook"></i></a></li>
-                <li><a><i class="fa-brands fa-instagram"></i></a></li>
-              </ul>
+              <section>
+                <img class="card-img" src="assets/placeholder-image.jpg"/>
+              </section>
+              <section>
+                <div class="card-title">Lider Equipo B</div>
+                <div class="card-content">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+                <ul>
+                  <li><a><i class="fa-brands fa-linkedin-in"></i></a></li>
+                  <li><a><i class="fa-brands fa-twitter"></i></a></li>
+                  <li><a><i class="fa-brands fa-facebook"></i></a></li>
+                  <li><a><i class="fa-brands fa-instagram"></i></a></li>
+                </ul>
+              </section>  
             </article>
             <article class="carousel-item card">
-              <img class="card-img" src="assets/placeholder-image.jpg"/>
-              <div class="card-title">Lider Equipo C</div>
-              <div class="card-content">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
-              <ul>
-                <li><a><i class="fa-brands fa-linkedin-in"></i></a></li>
-                <li><a><i class="fa-brands fa-twitter"></i></a></li>
-                <li><a><i class="fa-brands fa-facebook"></i></a></li>
-                <li><a><i class="fa-brands fa-instagram"></i></a></li>
-              </ul>
+              <section>
+                <img class="card-img" src="assets/placeholder-image.jpg"/>
+              </section>
+              <section>
+                <div class="card-title">Lider Equipo C</div>
+                <div class="card-content">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+                <ul>
+                  <li><a><i class="fa-brands fa-linkedin-in"></i></a></li>
+                  <li><a><i class="fa-brands fa-twitter"></i></a></li>
+                  <li><a><i class="fa-brands fa-facebook"></i></a></li>
+                  <li><a><i class="fa-brands fa-instagram"></i></a></li>
+                </ul>
+              </section>  
             </article>
             <article class="carousel-item card">
-              <img class="card-img" src="assets/placeholder-image.jpg"/>
-              <div class="card-title">Lider Equipo D</div>
-              <div class="card-content">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
-              <ul>
-                <li><a><i class="fa-brands fa-linkedin-in"></i></a></li>
-                <li><a><i class="fa-brands fa-twitter"></i></a></li>
-                <li><a><i class="fa-brands fa-facebook"></i></a></li>
-                <li><a><i class="fa-brands fa-instagram"></i></a></li>
-              </ul>
+              <section>
+                <img class="card-img" src="assets/placeholder-image.jpg"/>
+              </section>
+              <section>
+                <div class="card-title">Lider Equipo D</div>
+                <div class="card-content">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+                <ul>
+                  <li><a><i class="fa-brands fa-linkedin-in"></i></a></li>
+                  <li><a><i class="fa-brands fa-twitter"></i></a></li>
+                  <li><a><i class="fa-brands fa-facebook"></i></a></li>
+                  <li><a><i class="fa-brands fa-instagram"></i></a></li>
+                </ul>
+              </section>  
             </article>
             <article class="carousel-item card">
-              <img class="card-img" src="assets/placeholder-image.jpg"/>
-              <div class="card-title">Lider Equipo E</div>
-              <div class="card-content">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
-              <ul>
-                <li><a><i class="fa-brands fa-linkedin-in"></i></a></li>
-                <li><a><i class="fa-brands fa-twitter"></i></a></li>
-                <li><a><i class="fa-brands fa-facebook"></i></a></li>
-                <li><a><i class="fa-brands fa-instagram"></i></a></li>
-              </ul>
+              <section>
+                <img class="card-img" src="assets/placeholder-image.jpg"/>
+              </section>
+              <section>
+                <div class="card-title">Lider Equipo E</div>
+                <div class="card-content">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+                <ul>
+                  <li><a><i class="fa-brands fa-linkedin-in"></i></a></li>
+                  <li><a><i class="fa-brands fa-twitter"></i></a></li>
+                  <li><a><i class="fa-brands fa-facebook"></i></a></li>
+                  <li><a><i class="fa-brands fa-instagram"></i></a></li>
+                </ul>
+              </section>  
             </article>
             <article class="carousel-item card">
-              <img class="card-img" src="assets/placeholder-image.jpg"/>
-              <div class="card-title">Lider Equipo F</div>
-              <div class="card-content">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
-              <ul>
-                <li><a><i class="fa-brands fa-linkedin-in"></i></a></li>
-                <li><a><i class="fa-brands fa-twitter"></i></a></li>
-                <li><a><i class="fa-brands fa-facebook"></i></a></li>
-                <li><a><i class="fa-brands fa-instagram"></i></a></li>
-              </ul>
+              <section>
+                <img class="card-img" src="assets/placeholder-image.jpg"/>
+              </section>
+              <section>
+                <div class="card-title">Lider Equipo F</div>
+                <div class="card-content">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+                <ul>
+                  <li><a><i class="fa-brands fa-linkedin-in"></i></a></li>
+                  <li><a><i class="fa-brands fa-twitter"></i></a></li>
+                  <li><a><i class="fa-brands fa-facebook"></i></a></li>
+                  <li><a><i class="fa-brands fa-instagram"></i></a></li>
+                </ul>
+              </section>  
             </article>
           </section>
           <div class="carousel-controls">
-            <button id="prevCard" class="prev">      
+            <button id="prevCard" class="prev" @click="prevSlide" >      
               <i class="fa-solid fa-caret-left"></i>
             </button>
-            <button id="nextCard" class="next"> 
+            <button id="nextCard" class="next" @click="nextSlide" > 
               <i class="fa-solid fa-caret-right" ></i>
             </button>
           </div>
@@ -202,9 +222,7 @@
             <a class="social-media flex-container"><i class="fa-brands fa-tiktok"></i></a>
         </section>
       </footer>
-    </main>
-
-    
+    </main>    
 
   </body>
 </html>
@@ -213,6 +231,5 @@
 <!-- Scripts  
 <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>-->
 <script src="app.js" defer></script>
-<script src="fontAsome.min.js" type="text/javascript" defer></script>
-<script src="https://kit.fontawesome.com/60d4b70ba2.js" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script src="https://kit.fontawesome.com/60d4b70ba2.js" crossorigin="anonymous" defer></script>
+<script src="https://unpkg.com/vue@3/dist/vue.global.js" ></script>

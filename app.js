@@ -4,9 +4,13 @@ const { createApp } = Vue
       return {
         isMobile:/Mobile/.test(navigator.userAgent),
         currentSection:'',
-    }},
-    mounted(){
-       
+        carouselStyle: {
+          transform: ""
+        },
+        carouselItems : [],
+        itemWidth: 0,
+        currentPosition: 0
+      };
     },
     methods:{
         /**
@@ -33,46 +37,82 @@ const { createApp } = Vue
             if (!this.isMobile) {
                 body.classList.toggle("non-scroll")
             }
-        }
+        },
+        // Vue.js app methods
 
-    }
+        scrollBack() {
+          document.body.scrollTop = 0; // Safari
+          document.documentElement.scrollTop = 0; // Chrome, Firefox, IE and Opera
+        },
+
+        /**
+         * Function that allows to scroll to a particular section of the page
+         * @param {*} element button pressed
+         * @param {*} margin  margin considering navbar
+         */
+        scrollToElement(element, margin = window.innerHeight * 0.11) {
+          const elemento = document.getElementById(element);
+          const elementoPosition = elemento.getBoundingClientRect().top;
+          const offsetPosition = elementoPosition + window.screenY - margin;
+          window.scrollTo({
+            top: offsetPosition
+          });
+        },/*
+        moveCarousel() {
+          this.carousel.style.transform = `translateX(${-this.currentPosition}px)`;
+        },
+        nextSlide() {
+          this.carouselItems = document.querySelectorAll(".carouselItem")
+          this.itemWidth = this.carouselItems[0].offsetWidth;
+          this.currentPosition += this.itemWidth * 1.1;
+          if (window.innerHeight <= 412 && window.innerWidth >= 320 && this.currentPosition > (this.carouselItems.length) * this.itemWidth) {
+            this.currentPosition = 0; // slide in phone landscape orientation
+          } else if (window.innerWidth >= 520 && window.innerHeight > 412 && this.currentPosition > (this.carouselItems.length - 2) * this.itemWidth) {
+            this.currentPosition = 0; // for any other device
+          } else if (window.innerWidth >= 320 && this.currentPosition > (this.carouselItems.length) * this.itemWidth) {
+            this.currentPosition = 0; // slide in phone portrait orientation
+          }
+          this.moveCarousel();
+        },
+        prevSlide() {
+          this.carouselItems = document.querySelectorAll(".carouselItem")
+          this.itemWidth = this.carouselItems[0].offsetWidth;
+          this.currentPosition -= this.itemWidth * 1.1;
+          if (window.innerHeight > 412 && window.innerWidth >= 520 && this.currentPosition < -(this.itemWidth * 0.5)) {
+            this.currentPosition = (this.carouselItems.length - 3) * (this.itemWidth * 1.09); // any other device
+          } else if (window.innerWidth >= 320 && window.innerHeight <= 412 && this.currentPosition < -(this.itemWidth * 0.5)) {
+            this.currentPosition = (this.carouselItems.length - 1) * this.itemWidth * 1.08; // slide in phone landscape orientation
+          } else if (window.innerWidth >= 320 && this.currentPosition < -(this.itemWidth * 0.5)) {
+            this.currentPosition = (this.carouselItems.length - 1) * (this.itemWidth * 1.12); // slide in phone portrait orientation
+          }
+          this.moveCarousel();
+        } */
+    },
+    destroyed() {
+        window.removeEventListener('scroll', this.scrollFunction);
+    },
   }).mount('#app')
 
-// Click en botón "Regresar"
-// Funcion que permite regresar a la posición incial de la página al hacer click sobre el
-// botón "Regresar"
-let topScrollBtn = document.getElementById("scroll-top-btn");
-
+/** 
+ * Functions that displays scroll back to top button
+ */
 window.onscroll = function() {scrollFunction()};
-
 function scrollFunction() {
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    topScrollBtn.style.display = "block";
+    scrollTopBtn.style.display = "block";
   } else {
-    topScrollBtn.style.display = "none";
+    scrollTopBtn.style.display = "none";
   }
 }
-function scrollBack() {
-  document.body.scrollTop = 0; //Safari
-  document.documentElement.scrollTop = 0; //Chrome, Firefox, IE and Opera
-}
 
 
-// Click en botones de navegación
-// La función acepta un parámetro Id al cual la vista se moverá al momento de hacer click 
-// en el botón.
-function scrollToElement(element, margin = window.innerHeight * 0.11){
-  elemento = document.getElementById(element);
-  elementoPosition = elemento.getBoundingClientRect().top; 
-  offsetPosition = elementoPosition + window.screenY - margin;
-  window.scrollTo({
-    top: offsetPosition });
-}
-
+/**
+ * Carousel controller
+ */
 document.addEventListener('DOMContentLoaded', function() {
-
   const carouselItems = document.querySelectorAll('.carousel-item');
   const itemWidth = carouselItems[0].offsetWidth;
+  console.log(itemWidth)
 
   let currentPosition = 0;
 
@@ -81,30 +121,33 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   function nextSlide() {
-    currentPosition += itemWidth * 1.14;
-    if (window.innerWidth >= 900 && currentPosition > (carouselItems.length - 2) * itemWidth) {
-      currentPosition = 0;
+    currentPosition += itemWidth * 1.1;
+    console.log(currentPosition)
+    if (window.innerHeight <= 412 && window.innerWidth >= 320 && currentPosition > (carouselItems.length) * itemWidth) {
+        currentPosition = 0;  // slide in phone landscape orientation
     }
-    else if (window.innerWidth >= 520 && currentPosition > (carouselItems.length - 1) * itemWidth) {
-      currentPosition = 0;
+    else if (window.innerWidth >= 520 && window.innerHeight > 412 && currentPosition > (carouselItems.length - 2) * itemWidth) {
+        currentPosition = 0;  // for any other device
     }
     else if (window.innerWidth >= 320 && currentPosition > (carouselItems.length) * itemWidth) {
-      currentPosition = 0;
+      currentPosition = 0; // slide in phone portrait orientation
     }
     moveCarousel();
   }
 
   function prevSlide() {
-    currentPosition -= itemWidth * 1.14;
-    if (window.innerWidth >= 900 && currentPosition < 0) {
-      currentPosition = (carouselItems.length - 2.65) * itemWidth;
+    currentPosition -= itemWidth * 1.1;
+    console.log(currentPosition)
+    if (window.innerHeight > 412 && window.innerWidth >= 520  && currentPosition < -(itemWidth * 0.5) ) {
+      currentPosition = (carouselItems.length - 3) * (itemWidth * 1.09);  // any other device
     }
-    else if (window.innerWidth >= 520 && currentPosition < 0) {
-      currentPosition = (carouselItems.length - 1.42) * itemWidth;
+    else if (window.innerWidth >= 320 && window.innerHeight <= 412  && currentPosition < -(itemWidth * 0.5)) {
+      console.log("phone")
+      currentPosition = (carouselItems.length-1 ) * itemWidth * 1.08; // slide in phone landscape orientation
     }
-    else if (window.innerWidth >= 320 && currentPosition < 0) {
-      currentPosition = (carouselItems.length - 0.42) * itemWidth;
-    }
+    else if (window.innerWidth >= 320 && currentPosition < -(itemWidth * 0.5)  ){
+      currentPosition = (carouselItems.length-1 ) * (itemWidth * 1.12) ; // slide in phone portrait orientation
+    }  
     moveCarousel();
   }
 
