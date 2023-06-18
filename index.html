@@ -40,7 +40,7 @@
         <!-- Mision y vision -->
         <section class="row ">
           <section class="col fade-in">
-            <p class="mision-vision">
+            <p class="mision-vision fluid-font-paragraph">
               <span class="palabra-resaltada">Nuestra misión</span> es lorem ipsum
               dolor sit amet, consectetur adipiscing elit. Pellentesque quam
               augue, placerat eu lorem a orem ipsum
@@ -51,16 +51,16 @@
             <img class="image walk-in-right" src="assets/horizontal placeholder image.png"/>
           </section>
         </section>
-        <section class="row-inverted">
+        <section class="row">
           <section class="col color-col walk-in-left">
             <ul class="fade-in">
-              <li><button class="boton-oscuro" onclick="scrollToElement('quienes-somos')"> <b> Quiénes somos</b></button></li>
-              <li><button class="boton-oscuro"  onclick=""> <b>Nuestros Productos </b></button></li>
-              <li><button class="boton-oscuro"  onclick="scrollToElement('conoce-al-equipo')"> <b>Nuestro equipo</b></button></li>
+              <li><button class="button-dark" onclick="scrollToElement('quienes-somos')"> <b> Quiénes somos</b></button></li>
+              <li><button class="button-dark"  onclick=""> <b>Nuestros Productos </b></button></li>
+              <li><button class="button-dark"  onclick="scrollToElement('conoce-al-equipo')"> <b>Nuestro equipo</b></button></li>
             </ul>
           </section>
           <section class="col fade-in">
-            <p class="mision-vision">
+            <p class="mision-vision fluid-font-paragraph">
               <span class="palabra-resaltada">Nuestra visión</span> es lorem ipsum
               dolor sit amet, consectetur adipiscing elit. Pellentesque quam
               augue, placerat eu lorem a orem ipsum
@@ -69,7 +69,7 @@
           </section>
         </section>
   
-    <!-- Boton scroll back -->
+    <!-- button scroll back -->
     <button onclick="scrollBack()" id="scroll-top-btn" class="scroll-top" title="Regresar">
       <i class="fa-solid fa-caret-up"></i>
     </button>
@@ -77,26 +77,27 @@
     <!-- Quienes somos -->
       <section id="quienes-somos">
         <h1  class="title-row titulo fluid-font-title" >¿Quiénes somos?</h1>
-        <section class="row">
-          <section class="col-parrafo">
-            <p class="parrafo fade-in">
+        <section class="row-inverted">
+          <section class="col-paragraph">
+            <p class="paragraph fade-in">
               <span class="palabra-resaltada">Fennex</span>  es una aplicación mexicana creada con
               el objetivo de lorem ipsum dolor sit amet, consectetur adipiscing
               elit. Pellentesque quam augue, placerat eu lorem a lorem ipsum dolor
-              sit amet, consectetur adipiscing elit. Pellentesque quam augue,
+              sit amet, consectetur adipiscing elit. 
+            </p>
+            <p class="paragraph fade-in"> Pellentesque quam augue,
               placerat eu lorem a.Pellentesque quam augue, placerat eu lorem a lorem ipsum dolor
               sit amet, consectetur adipiscing elit. Pellentesque quam augue,
-              placerat eu lorem a.
-            </p>
+              placerat eu lorem a.</p>
           </section>
           <section class="img-col-nosotros">
-            <img class="image walk-in-right" src="./assets/icon.png" alt="Porducto 1">
+            <img class="image-logo walk-in-right" src="./assets/Logo-11.png" alt="logo 11">
           </section>
         </section>
       </section>
         
-      <section class="filosofia-bg">
-        <p class="filosofia fade-in">Nuestra filosofia es lorem ipsum dolor sit amet, consectetur
+      <section class="philosophy-bg">
+        <p class="philosophy fade-in paragraph">Nuestra filosofia es lorem ipsum dolor sit amet, consectetur
         adipiscing elit. Pellentesque quam augue, placerat eu lorem a lorem
         ipsum dolor sit amet</p>
       </section>
@@ -105,17 +106,21 @@
       <section>
         <h2 class="titulo title-row fluid-font-title" id="conoce-al-equipo">Conoce al equipo</h2>
         <div class="carousel-container">
-          <section class="carousel">
+          <section id="carousel" class="carousel">
             <article class="carousel-item card">
-              <img class="card-img" src="assets/placeholder-image.jpg"/>
-              <div class="card-title">Lider Equipo A</div>
-              <div class="card-content">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
-              <ul>
-                <li><a><i class="fa-brands fa-linkedin-in"></i></a></li>
-                <li><a><i class="fa-brands fa-twitter"></i></a></li>
-                <li><a><i class="fa-brands fa-facebook"></i></a></li>
-                <li><a><i class="fa-brands fa-instagram"></i></a></li>
-              </ul>
+              <section>
+                <img class="card-img" src="assets/placeholder-image.jpg"/>
+              </section>
+              <section>
+                <div class="card-title">Lider Equipo A</div>
+                <div class="card-content">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+                <ul>
+                  <li><a><i class="fa-brands fa-linkedin-in"></i></a></li>
+                  <li><a><i class="fa-brands fa-twitter"></i></a></li>
+                  <li><a><i class="fa-brands fa-facebook"></i></a></li>
+                  <li><a><i class="fa-brands fa-instagram"></i></a></li>
+                </ul>
+              </section>
             </article>
             <article class="carousel-item card">
               <img class="card-img" src="assets/placeholder-image.jpg"/>
@@ -174,10 +179,10 @@
             </article>
           </section>
           <div class="carousel-controls">
-            <button class="prev">      
+            <button id="prevCard" class="prev">      
               <i class="fa-solid fa-caret-left"></i>
             </button>
-            <button class="next"> 
+            <button id="nextCard" class="next"> 
               <i class="fa-solid fa-caret-right" ></i>
             </button>
           </div>

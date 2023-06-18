@@ -22,8 +22,10 @@
   /*** Font sizes ***/
   /*****************/
   /* Title font size */
-  --min-title-size:32px;
-  --max-title-size:52px;
+  --min-title-size:36px;
+  --max-title-size:62px;
+  --min-paragraph-size: 22px;
+  --max-paragraph-size: 33px;
 }
 
 /* * * * * */
@@ -143,16 +145,16 @@ body {
   width: 100%;
 }
 
-.col, .col-parrafo {
+.col, .col-paragraph {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 100%;
+  /*height: 100%;*/
   width: 50%;
   text-align: center;
 }
 
-.col-parrafo{
+.col-paragraph{
   width: 75%;
 }
 
@@ -175,9 +177,12 @@ li {
 }
 
 .img-col-nosotros {
+  display: flex;
+  flex-direction: column;
   height: 100%;
   width: 25%;
   padding: 0;
+  justify-content: center;
 }
 
 .image {
@@ -185,18 +190,23 @@ li {
   width: 100%;
   height: 100%;
   margin: 0;
-  padding: 0;
+}
+
+.image-logo {
+  width: 75%;
+  height: 59%;
+  padding-right: 25%
 }
 
 .mision-vision {
-  font-size: 4vh;
-  padding: 3%;
+  padding: 8%;
+  text-align: justify;
 }
 
 /* * * * * */
 /* Buttons */
 /* * * * * */
-.boton-oscuro,.boton-claro {
+.button-dark {
   font-size: 1.5vw;
   /*font-family: "Tajawal", sans-serif; */
   border-radius: 10px;
@@ -206,34 +216,18 @@ li {
   height: 50px;
   text-align: center;
   padding: auto auto;
-}
-
-.boton-oscuro{
   background-color: var(--blue);
   border: solid black 1px;
   color: white;
 }
 
-.boton-claro{
-  background-color: white;
-  border: solid var(--blue) 2px;
-  color: var(--blue);
-}
-
-.boton-oscuro:hover {
+.button-dark:hover {
   background-color: white;
   color: var(--blue);
   border: solid 2px var(--blue);
   font-weight: bold;
   cursor: pointer;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 15%);
-}
-
-.boton-claro:hover{
-  background: var(--dark-blue);
-  color: white;
-  cursor: pointer;
-  border-color: var(--dark-blue);
 }
 
 .scroll-top{
@@ -287,13 +281,13 @@ li {
   font-weight: bold;
 }
 
-.parrafo {
+.paragraph {
   font-size: 1.6vw;
   text-align: justify;
   padding: 0 8%;
 }
 
-.filosofia-bg {
+.philosophy-bg {
   margin:40px 0;
   width: 100%;
   height: 50%;
@@ -302,11 +296,9 @@ li {
   justify-content: center;
 }
 
-.filosofia {
-  color: var(--colorClaro);
-  text-align: center;
-  width: 90%;
-  font-size: 1.2rem;
+.philosophy {
+  color: var(--blue);
+  width: 85%;
   border:  solid var(--colorClaro) 2px;
   border-radius: 10px;
   padding: 20px;
@@ -338,7 +330,7 @@ li {
 
 .carousel-controls {
   position: absolute;
-  left: 1%;
+  left: 0;
   right: 2%;
   top: 50%;
   transform: translateY(-50%);
@@ -465,6 +457,10 @@ li {
   font-size: var(--min-title-size)
 }
 
+.fluid-font-paragraph{
+  font-size: var(--min-paragraph-size)
+}
+
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -497,6 +493,10 @@ li {
   .fluid-font-title{
     font-size: calc(var(--min-title-size) + 20 * ((100vw - 320px) / 1600)) ;
   }
+
+  .fluid-font-paragraph{
+    font-size: calc(var(--min-paragraph-size) + 2 * ((100vw - 320px) / 1600)) ;
+  }
 }
 
 
@@ -504,6 +504,10 @@ li {
 @media screen and (min-width: 1920px) {
   .fluid-font-title{
     font-size: var(--max-title-size);
+  }
+
+  .fluid-font-paragraph{
+    font-size: var(--max-title-paragraph);
   }
 }
 
@@ -520,6 +524,33 @@ li {
 @media (max-height:412px) and (orientation:landscape){
   .settings-sub-sub-container{
     flex-wrap:nowrap;
+  }
+
+  .title-row{
+    margin-bottom: 6px;
+  }
+
+  .carousel{
+    width:90%;
+    height: 15%;
+  }
+
+  .card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+
+  .carousel-item {
+    flex: 0 0 90%; /* Display 1 items per slide on smaller screens */
+    margin-top: 0;
+  }
+
+  .card-img{
+    object-fit: cover;
+    width: 71%;
+    margin-top: 0;
+    border-radius: 50%;
   }
 }
 
@@ -571,7 +602,8 @@ li {
 }
 
 @media (max-width: 900px) {
-  .boton-claro, .boton-oscuro{
+  .button-dark{
+    width: 60%;
     font-size: 2vh;
   }
 
@@ -581,13 +613,14 @@ li {
     bottom: 0px;
   }
 
-  .parrafo{
+  .paragraph{
     font-size: 3vh;
   }
 
-  .row, .row-prod2, .row-filos {
+  .row {
     flex-direction: column;
     height: fit-content;
+
   }
 
   .row-prod1, .row-inverted{
@@ -609,7 +642,7 @@ li {
     height: 40vh;
   }
 
-  .col-parrafo, .col-descripcion-producto{
+  .col-paragraph, .col-descripcion-producto{
     height: fit-content;
     width: 100%;
   }
@@ -618,25 +651,34 @@ li {
     margin: 40px 0;
   }
 
-  .mision-vision{
-    font-size: 3.5vh;
-  }
-
   button{
     width: 60%;
   }
 
-  .filosofia{
+  .img-col-nosotros {
+    display: flex;
+    height: 28%;
+    width: 100%;
+    padding: 0;
+    justify-content: center;
+  }
+  
+  .image-logo {
+    width: 20%;
+    padding: 0  40%;
+  }
+
+  .philosophy-bg{
     font-size: 3.5vw;
   }
 }
 
-@media (min-width: 520px) and (max-width: 900px) {
+/*@media (min-width: 520px) and (max-width: 900px) {
   .carousel-item{
-    flex: 0 0 39%; /* Display 2 items per slide */
+    flex: 0 0 39%; /* Display 2 items per slide 
     margin: 3%;
   }
-}
+}*/
 
 @media (min-width: 320px) and (max-width:519px){
   .carousel{

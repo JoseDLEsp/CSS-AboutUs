@@ -70,11 +70,9 @@ function scrollToElement(element, margin = window.innerHeight * 0.11){
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-  const carousel = document.querySelector('.carousel');
+
   const carouselItems = document.querySelectorAll('.carousel-item');
   const itemWidth = carouselItems[0].offsetWidth;
-  const prevBtn = document.querySelector('.prev');
-  const nextBtn = document.querySelector('.next');
 
   let currentPosition = 0;
 
@@ -84,7 +82,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
   function nextSlide() {
     currentPosition += itemWidth * 1.14;
-    if (currentPosition > (carouselItems.length - 1) * itemWidth) {
+    if (window.innerWidth >= 900 && currentPosition > (carouselItems.length - 2) * itemWidth) {
+      currentPosition = 0;
+    }
+    else if (window.innerWidth >= 520 && currentPosition > (carouselItems.length - 1) * itemWidth) {
+      currentPosition = 0;
+    }
+    else if (window.innerWidth >= 320 && currentPosition > (carouselItems.length) * itemWidth) {
       currentPosition = 0;
     }
     moveCarousel();
@@ -92,12 +96,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
   function prevSlide() {
     currentPosition -= itemWidth * 1.14;
-    if (currentPosition < 0) {
-      currentPosition = (carouselItems.length - 1) * itemWidth;
+    if (window.innerWidth >= 900 && currentPosition < 0) {
+      currentPosition = (carouselItems.length - 2.65) * itemWidth;
+    }
+    else if (window.innerWidth >= 520 && currentPosition < 0) {
+      currentPosition = (carouselItems.length - 1.42) * itemWidth;
+    }
+    else if (window.innerWidth >= 320 && currentPosition < 0) {
+      currentPosition = (carouselItems.length - 0.42) * itemWidth;
     }
     moveCarousel();
   }
 
-  nextBtn.addEventListener('click', nextSlide);
-  prevBtn.addEventListener('click', prevSlide);
+  nextCard.addEventListener('click', nextSlide);
+  prevCard.addEventListener('click', prevSlide);
 });
