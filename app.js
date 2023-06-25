@@ -50,43 +50,14 @@ const { createApp } = Vue
          * @param {*} element button pressed
          * @param {*} margin  margin considering navbar
          */
-        scrollToElement(element, margin = window.innerHeight * 0.11) {
+        scrollToElement(element, margin = 10) {
           const elemento = document.getElementById(element);
           const elementoPosition = elemento.getBoundingClientRect().top;
           const offsetPosition = elementoPosition + window.screenY - margin;
           window.scrollTo({
             top: offsetPosition
           });
-        },/*
-        moveCarousel() {
-          this.carousel.style.transform = `translateX(${-this.currentPosition}px)`;
         },
-        nextSlide() {
-          this.carouselItems = document.querySelectorAll(".carouselItem")
-          this.itemWidth = this.carouselItems[0].offsetWidth;
-          this.currentPosition += this.itemWidth * 1.1;
-          if (window.innerHeight <= 412 && window.innerWidth >= 320 && this.currentPosition > (this.carouselItems.length) * this.itemWidth) {
-            this.currentPosition = 0; // slide in phone landscape orientation
-          } else if (window.innerWidth >= 520 && window.innerHeight > 412 && this.currentPosition > (this.carouselItems.length - 2) * this.itemWidth) {
-            this.currentPosition = 0; // for any other device
-          } else if (window.innerWidth >= 320 && this.currentPosition > (this.carouselItems.length) * this.itemWidth) {
-            this.currentPosition = 0; // slide in phone portrait orientation
-          }
-          this.moveCarousel();
-        },
-        prevSlide() {
-          this.carouselItems = document.querySelectorAll(".carouselItem")
-          this.itemWidth = this.carouselItems[0].offsetWidth;
-          this.currentPosition -= this.itemWidth * 1.1;
-          if (window.innerHeight > 412 && window.innerWidth >= 520 && this.currentPosition < -(this.itemWidth * 0.5)) {
-            this.currentPosition = (this.carouselItems.length - 3) * (this.itemWidth * 1.09); // any other device
-          } else if (window.innerWidth >= 320 && window.innerHeight <= 412 && this.currentPosition < -(this.itemWidth * 0.5)) {
-            this.currentPosition = (this.carouselItems.length - 1) * this.itemWidth * 1.08; // slide in phone landscape orientation
-          } else if (window.innerWidth >= 320 && this.currentPosition < -(this.itemWidth * 0.5)) {
-            this.currentPosition = (this.carouselItems.length - 1) * (this.itemWidth * 1.12); // slide in phone portrait orientation
-          }
-          this.moveCarousel();
-        } */
     },
     destroyed() {
         window.removeEventListener('scroll', this.scrollFunction);
@@ -106,51 +77,115 @@ function scrollFunction() {
 }
 
 
-/**
- * Carousel controller
- */
-document.addEventListener('DOMContentLoaded', function() {
-  const carouselItems = document.querySelectorAll('.carousel-item');
-  const itemWidth = carouselItems[0].offsetWidth;
-  console.log(itemWidth)
+// *****************************************
+// ****************CAROUSEL*****************
+// *****************************************
+const itemsEl = document.querySelectorAll(".carousel-item");
+const btnLeft = document.querySelector(".btn-carousel--left");
+const btnRight = document.querySelector(".btn-carousel--right");
 
-  let currentPosition = 0;
+const mediaQueryPhone = 600; //600px phone
+const mediaQueryTabPort = 900; //900px tab-port
+const mediaQueryTabLand = 1200; //1200px tab-land
+const mediaQueryDesktop = 1800; // 1800px desktop
 
-  function moveCarousel() {
-    carousel.style.transform = `translateX(${-currentPosition}px)`;
+let elemPerView;
+
+//Scroll counters
+let scrollsLeft;
+let scrollsRight;
+let maxScrolls;
+
+//Detect currrent MEDIAQUERY
+const mediaSensor = function (width, height) {
+  if ( height <= 412 || width <= mediaQueryPhone ) {
+    return mediaQueryPhone;
+  } else if (width <= mediaQueryTabPort) {
+    return mediaQueryTabPort;
+  } else if (mediaQueryTabPort < width) {
+    return mediaQueryDesktop;
+  }
+};
+
+//Get the current MEDIAQUERY
+let currentQuery = mediaSensor(window.innerWidth, window.innerHeight);
+
+//Build the carousel according with MEDIAQUERY
+const carouselInit = function () {
+
+  //For phone
+  if (currentQuery <= mediaQueryPhone) {
+    //only one card in carousel per view
+    elemPerView = 1;
+  } 
+  
+  //For Tab-port
+  else if (currentQuery <= mediaQueryTabPort) {
+    //only two cards in carousel per view
+    elemPerView = 2;
+  } 
+  
+  //For Desktop
+  else if (currentQuery <= mediaQueryDesktop) {
+    //Three cards per view
+    elemPerView = 3;
   }
 
-  function nextSlide() {
-    currentPosition += itemWidth * 1.1;
-    console.log(currentPosition)
-    if (window.innerHeight <= 412 && window.innerWidth >= 320 && currentPosition > (carouselItems.length) * itemWidth) {
-        currentPosition = 0;  // slide in phone landscape orientation
-    }
-    else if (window.innerWidth >= 520 && window.innerHeight > 412 && currentPosition > (carouselItems.length - 2) * itemWidth) {
-        currentPosition = 0;  // for any other device
-    }
-    else if (window.innerWidth >= 320 && currentPosition > (carouselItems.length) * itemWidth) {
-      currentPosition = 0; // slide in phone portrait orientation
-    }
-    moveCarousel();
-  }
+  //Determine how many scrolls are allowed according with cards per view
+  maxScrolls = Math.ceil(itemsEl.length / elemPerView) - 1;
 
-  function prevSlide() {
-    currentPosition -= itemWidth * 1.1;
-    console.log(currentPosition)
-    if (window.innerHeight > 412 && window.innerWidth >= 520  && currentPosition < -(itemWidth * 0.5) ) {
-      currentPosition = (carouselItems.length - 3) * (itemWidth * 1.09);  // any other device
-    }
-    else if (window.innerWidth >= 320 && window.innerHeight <= 412  && currentPosition < -(itemWidth * 0.5)) {
-      console.log("phone")
-      currentPosition = (carouselItems.length-1 ) * itemWidth * 1.08; // slide in phone landscape orientation
-    }
-    else if (window.innerWidth >= 320 && currentPosition < -(itemWidth * 0.5)  ){
-      currentPosition = (carouselItems.length-1 ) * (itemWidth * 1.12) ; // slide in phone portrait orientation
-    }  
-    moveCarousel();
-  }
+  scrollsLeft = maxScrolls;
+  scrollsRight = 0;
 
-  nextCard.addEventListener('click', nextSlide);
-  prevCard.addEventListener('click', prevSlide);
+
+  //Change size of cards
+  itemsEl.forEach((c, i) => {
+    c.style.left = `${(100 / elemPerView) * i }%`;
+    c.style.width = `${100 / elemPerView }%`;
+  });
+};
+
+carouselInit();
+
+//Detect change in width of the window
+window.addEventListener("resize", function () {
+  if (currentQuery != mediaSensor(window.innerWidth, window.innerHeight)) {
+    currentQuery = mediaSensor(window.innerWidth, window.innerHeight);
+    carouselInit();
+  }
+});
+
+//BUTTONS CONTROLS
+
+//Move to right
+btnRight.addEventListener("click", function () {
+
+  //If you're not in max of scrolls
+  if (scrollsRight != maxScrolls) {
+    //Translate all cards to left
+    itemsEl.forEach((item) => {
+      item.style.left = `calc(${item.style.left} + ${-100}%)`;
+    });
+
+
+    //Update scrolls counters
+    scrollsLeft--;
+    scrollsRight++;
+  }
+});
+
+//Move to left
+btnLeft.addEventListener("click", function () {
+
+  //if you're not in max of scrolls
+  if (scrollsLeft != maxScrolls) {
+    //Translate all cards to right
+    itemsEl.forEach((item) => {
+      item.style.left = `calc(${item.style.left} + ${100}%)`;
+    });
+
+    //Update scrolls counters
+    scrollsLeft++;
+    scrollsRight--;
+  }
 });

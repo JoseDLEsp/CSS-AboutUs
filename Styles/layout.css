@@ -207,8 +207,6 @@ li {
 /* Buttons */
 /* * * * * */
 .button-dark {
-  font-size: 1.5vw;
-  /*font-family: "Tajawal", sans-serif; */
   border-radius: 10px;
   padding: 0px;
   margin: 0.4rem auto;
@@ -248,10 +246,6 @@ li {
   border: solid transparent 2px;
 }
 
-.scroll-top:hover{
-  /*border: solid var(--colorClaro) 5px;*/
-}
-
 .scroll-top p{
   margin: 0;
   font-size: 18px;
@@ -281,15 +275,8 @@ li {
   font-weight: bold;
 }
 
-.paragraph {
-  font-size: 1.6vw;
-  text-align: justify;
-  padding: 0 8%;
-}
-
 .philosophy-bg {
-  margin:40px 0;
-  width: 100%;
+  margin:16px 6%;
   height: 50%;
   display: flex;
   flex-direction: row;
@@ -298,7 +285,6 @@ li {
 
 .philosophy {
   color: var(--blue);
-  width: 85%;
   border:  solid var(--colorClaro) 2px;
   border-radius: 10px;
   padding: 20px;
@@ -307,66 +293,77 @@ li {
 /* * * * *  */
 /* Carousel */
 /* * * * *  */
-.carousel-container {
+.utility-container {
   position: relative;
-  width: 100%;
-  overflow: hidden;
-  align-items: center;
-}
+  max-width: 130rem;
+  margin: 0 auto; }
 
-.carousel {
-  position: relative;
-  width: 95%;
-  margin-left: 2%;
-  margin-right: 2%;
+.carousel-container {
+  margin: auto;
+  max-width: 126rem;
   display: flex;
-  transition: transform 0.5s;
-}
+  justify-content: center;
+  align-items: center; }
 
 .carousel-item {
-  flex: 0 0 24%; /* Display 3 items per slide */
-  margin: 2%;
-  text-align: center;
-}
-
-.carousel-controls {
+  display: inline-block;
+  height: 100%;
   position: absolute;
-  left: 0;
-  right: 2%;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 90;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  top: 0%;
+  transition: all 0.4s;
+}
+
+.carousel-view {
+  width: 100%;
+  height: 38rem;
   overflow: hidden;
-}
+  position: relative; }
 
-.prev, .next{
-  width: 5%;
-  font-size: 53px;
-  background: transparent;
+.btn-carousel {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border: none;
   color: var(--blue);
-  cursor: pointer;
-  border-radius: 50%;
-  border: solid transparent 2px;
+  font-size: 5vh;
+  width: 3%;
+  height: 4vh;
+  border-radius: 100px; 
 }
-
+.btn-carousel:hover {
+  cursor: pointer; 
+}
+.btn-carousel--left {
+  top: 50%;
+  left: 1%;
+}
+.btn-carousel--right {
+  top: 50%;
+  right: 1%;
+}
 
 /* * * * */
 /* Cards */
 /* * * * */
+.card-container {
+  height: fit-content;
+  display: flex;
+  flex-direction: column; 
+  padding: 37px;
+}
+
 .card-img{
   object-fit: cover;
-  width: 86%;
-  margin: 7%;
+  width: 72%;
+  margin: 14%;
   border-radius: 50%;
 }
 
 .card {
   display: flex;
   flex-direction: column;
-  padding: 20px;
   background: white;
   border-radius: 12px;
   color: var(--blue);
@@ -459,8 +456,14 @@ li {
   font-size: var(--min-title-size)
 }
 
+.fluid-font-btn{
+  font-size: var(--min-paragraph-size);
+}
+
 .fluid-font-paragraph{
-  font-size: var(--min-paragraph-size)
+  font-size: var(--min-paragraph-size);
+  text-align: justify;
+  padding: 2% 8%;
 }
 
 @keyframes fadeIn {
@@ -542,15 +545,18 @@ li {
     height: 15%;
   }
 
+  .carousel-view {
+    height: 20rem;
+  }
+
+  .btn-carousel {
+    font-size: 10vh;
+  }
+
   .card {
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
-  }
-
-  .carousel-item {
-    flex: 0 0 90%; /* Display 1 items per slide on smaller screens */
-    margin-top: 0;
   }
 
   .card-img{
@@ -583,7 +589,6 @@ li {
 */
 
 @media (min-height:412px) and (min-width: 916px) {
-  
   /*************/
   /***HEADER***/
   /***********/
@@ -611,7 +616,6 @@ li {
 @media (max-width: 900px) {
   .button-dark{
     width: 60%;
-    font-size: 2vh;
   }
 
   .scroll-top{
@@ -641,6 +645,10 @@ li {
 
   .title-row{
     height: 20%;
+  }
+
+  .col, .img-col{
+    width: 100%;
   }
 
   .col-paragraph, .col-descripcion-producto{
@@ -679,10 +687,6 @@ li {
     width:90%;
   }
 
-  .carousel-item {
-    flex: 0 0 90%; /* Display 1 items per slide on smaller screens */
-    margin: 6%;
-  }
 
   .carousel-controls{
     width: 95%;
