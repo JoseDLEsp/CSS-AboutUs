@@ -193,8 +193,7 @@ li {
 }
 
 .image-logo {
-  width: 75%;
-  height: 59%;
+  aspect-ratio: 7/6;
   padding-right: 25%
 }
 
@@ -256,7 +255,7 @@ li {
   margin-bottom: 5px;
 }
 
-.palabra-resaltada {
+.highlighted {
   background: var(--blue);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -264,8 +263,7 @@ li {
 
 .title-row {
   width: 100%;
-  height: 10%;
-  margin-top: 5%;
+  margin-top: 2.2%;
   margin-bottom: 2%;
 }
 
@@ -276,7 +274,7 @@ li {
 }
 
 .philosophy-bg {
-  margin:16px 6%;
+  margin:16px 6.1%;
   height: 50%;
   display: flex;
   flex-direction: row;
@@ -463,7 +461,7 @@ li {
 .fluid-font-paragraph{
   font-size: var(--min-paragraph-size);
   text-align: justify;
-  padding: 2% 8%;
+  padding: 1% 8%;
 }
 
 @keyframes fadeIn {
@@ -502,6 +500,10 @@ li {
   .fluid-font-paragraph{
     font-size: calc(var(--min-paragraph-size) + 2 * ((100vw - 320px) / 1600)) ;
   }
+
+  .fluid-font-btn{
+    font-size: calc(var(--min-paragraph-size) * ((100vw - 320px) / 1600)) ;
+  }
 }
 
 
@@ -513,6 +515,10 @@ li {
 
   .fluid-font-paragraph{
     font-size: var(--max-title-paragraph);
+  }
+
+  .fluid-font-btn{
+    font-size: calc(var(--min-paragraph-size)  * ((100vw - 320px) / 1600)) ;
   }
 }
 
@@ -620,8 +626,8 @@ li {
 
   .scroll-top{
     width: fit-content;
-    right: 0px;
-    bottom: 0px;
+    right: 15px;
+    bottom: 15px;
   }
 
   .paragraph{
@@ -673,8 +679,8 @@ li {
   }
   
   .image-logo {
-    width: 20%;
-    padding: 0  40%;
+    width: 40%;
+    padding: 0  30%;
   }
 
   .philosophy-bg{
@@ -696,5 +702,13 @@ li {
   .col, .img-col {
     width: 100%;
     height: 40vh;
+  }
+
+  .carousel-view {
+    height: 32rem;
+  }
+
+  .philosophy-bg{
+    margin: 16px 7%;
   }
 }
